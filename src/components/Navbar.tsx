@@ -23,7 +23,7 @@ const navLinks = [
   { title: 'Call Us - 0330 2366 999', href: '/call-us' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -165,7 +165,7 @@ export default function Navbar() {
                   </>
                 ) : (
                   <Link
-                    href={item.href || '#'}
+                    href={`/${country}${item.href}` || '#'}
                     className={`relative block transition-all duration-300 ${
                       isScrolled
                         ? 'text-gray-800 after:bottom-[-36px]'

@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/component/Button/button';
+import Button from '@/components/Button';
 import { ChevronRightIcon } from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import Link from 'next/link';

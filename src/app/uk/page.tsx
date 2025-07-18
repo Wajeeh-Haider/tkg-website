@@ -1,5 +1,5 @@
-import Header from '@/component/uk/Header';
-import Navbar from '@/component/uk/Navbar';
+import Header from '@/components/uk/Header';
+import Navbar from '@/components/Navbar';
 import React from 'react';
 
 function Home() {
