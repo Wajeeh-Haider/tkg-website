@@ -4,23 +4,24 @@ import React from 'react';
 import Link from 'next/link';
 import { FaFacebookF } from "react-icons/fa";
 import { BiLogoInstagramAlt } from "react-icons/bi";
+
 const Footer = () => {
     return (
-        <footer className="bg-primary text-white py-8 mt-15 w-full">
-            <div className='container mx-auto px-15 mt-12'>
-                <h1 className="font-serif mb-15" style={{ fontSize: '3.61rem' }}>
+        <footer className="bg-primary text-white py-8 w-full">
+            <div className="container mx-auto px-15 mt-12">
+                <h1 className="font-serif mb-15 xl:text-[3.61rem] lg:text-[3rem] md:text-[3rem] text-[2rem]" >
                     In-home pet euthanasia for <br /> your beloved friend
                 </h1>
 
                 <div className="w-full h-[1px] bg-neutral-100 my-4 mt-20"></div>
 
-                <div className="flex flex-row space-y-4 mt-25 gap-55">
-                    <div className="brightness-[10%] grayscale invert opacity-90 ">
-                        <img src="/images/logo.png" alt="" className="h-30"/>
+                <div className="flex flex-col  lg:flex-row flex-wrap space-y-4 lg:space-y-0 mt-25 md:mt-0 md:gap-15 xl:gap-55 sm:gap-5">
+                    <div className="brightness-[10%] grayscale invert opacity-90">
+                        <img src="/images/logo.png" alt="" className="h-30" />
                     </div>
 
                     <div>
-                        <nav className="flex flex-col space-y-2 gap-6">
+                        <nav className="flex flex-col space-y-2 gap-6 md:mt-5">
                             <Link href="/about" className="hover:underline text-white font-sans">How It Works</Link>
                             <Link href="/services" className="hover:underline text-white font-sans">About Us</Link>
                             <Link href="/about" className="hover:underline text-white font-sans">Locations</Link>
@@ -31,7 +32,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <nav className="flex flex-col space-y-2 gap-6">
+                        <div className="flex flex-col space-y-2 gap-6 md:mt-5">
                             <Link href="/about" className="hover:underline text-white font-sans">Book Your Pet's Home Euthanasia</Link>
                             <Link href="/services" className="hover:underline text-white font-sans">Book Your Pet's Collection</Link>
                             <Link href="/about" className="hover:underline text-white font-sans">Aftercare Service</Link>
@@ -39,11 +40,11 @@ const Footer = () => {
                             <Link href="/locations" className="hover:underline text-white font-sans">Privacy Policy</Link>
                             <Link href="/faqs" className="hover:underline text-white font-sans">Contact</Link>
                             <Link href="/faqs" className="hover:underline text-white font-sans">Popular Searches</Link>
-                        </nav>
+                        </div>
                     </div>
 
-                    <div className="flex flex-col space-y-2 gap-6">
-                        <div className="flex flex-row gap-6 ">
+                    <div className="flex flex-col space-y-2 gap-6 md:mt-5">
+                        <div className="flex flex-row gap-6">
                             <div className='rounded-full p-2 bg-[#1a8f94] flex items-center justify-center'>
                                 <FaFacebookF className="text-xl" />
                             </div>
@@ -58,7 +59,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className= "flex justify-between items-center mt-20 mb-10 mr-22 text-white font-sans">
+
+                <div className="flex justify-between items-center mt-20 mb-10 mr-22 text-white font-sans">
                     <div><p>©The Kindest Goodbye 2025</p></div>
                     <div><p>Website By SGD</p></div>
                 </div>

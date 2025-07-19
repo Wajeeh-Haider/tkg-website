@@ -8,6 +8,7 @@ import PetAtHome from "@/components/au/PetAtHome";
 import EuthanasiaServices from "@/components/au/EuthanasiaServices";
 import HowItWorks from "@/components/au/HowItWork";
 import FaqSection from "@/components/au/FaqSection";
+import Blogs from "@/components/au/Blogs";
 // import Footer from "@/components/Footer";
 
 const Page = () => {
@@ -67,6 +68,7 @@ const Page = () => {
       <EuthanasiaServices/>
       <HowItWorks />
       <FaqSection />
+      <Blogs />
 
       {/* Footer */}
       {/* <Footer /> */}

@@ -4,7 +4,16 @@ import { MdOutlinePets } from "react-icons/md";
 const PetAtHome = () => {
   return (
     <div>
+      <div className='flex'>
+<div className='relative top-20 left-20'>
+          <img
+              src="/images/decor1.svg" // replace with your own path or use <Image />
+              alt="Aftercare Icon"
+              // className="w-45 h-45 mt-1"
+            />
+        </div>
       <div className="container mx-auto mt-10 mb-60">
+
         <div className="flex flex-row gap-10 items-center mb-6">
           <div>
             <h1 className='text-7xl text-primary font-serif'>Pet <br/>Euthanasia At <br/>Home</h1>
@@ -35,6 +44,9 @@ const PetAtHome = () => {
     
         </div>
       </div>
+      </div>
+        
+
     </div>
   )
 }
