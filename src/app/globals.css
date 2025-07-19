@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -44,4 +45,16 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Ensure list styles render properly inside FAQ answers */
+.faq-content ul {
+  list-style-type: disc;
+  padding-left: 1.25rem; /* equal to ml-5 */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-content li {
+  margin-bottom: 0.25rem;
 }

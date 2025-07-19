@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/component/Button/button';
+import Button from '@/components/Button';
 import { ChevronRightIcon } from '@heroicons/react/16/solid';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,10 +25,10 @@ export default function Home() {
   return (
     <div>
       <div
-        className="relative w-full h-screen bg-fixed bg-center bg-cover bg-no-repeat"
+        className="relative w-full h-screen bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: "url('/images/banner.jpg')" }}
       >
-        <div className="absolute inset-0 bg-white/4 z-10" />
+        <div className="absolute inset-0 bg-black opacity-10 z-10" />
         {/* Navbar */}
         <nav
           className={`block w-full sticky top-0 z-[9999]  transition-all duration-300 ${
@@ -219,7 +219,7 @@ export default function Home() {
         </nav>
 
         {/* Hero Header */}
-        <header className="relative z-10 flex flex-col justify-center container mx-auto text-white px-0 lg:px-4 h-screen">
+        <div className="relative z-10 flex flex-col justify-center container mx-auto text-white px-0 lg:px-4 h-screen">
           <Image
             src="/images/Google-Reviews.png"
             alt="Hero Image"
@@ -237,14 +237,14 @@ export default function Home() {
               <Button
                 label="UK"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 hover:opacity-80"
+                className="hover:gap-2 hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
             <Link href="/au">
               <Button
                 label="Australia"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 hover:opacity-80"
+                className="hover:gap-2 hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
           </div>
@@ -256,7 +256,7 @@ export default function Home() {
               <span className="dot w-2 h-2 bg-white rounded-full mt-2 transition-all duration-500 group-hover:translate-y-6"></span>
             </button>
           </div>
-        </header>
+        </div>
       </div>
       {/* Top Content */}
       <div className="bg-primary ">

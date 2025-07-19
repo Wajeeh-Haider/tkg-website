@@ -42,11 +42,6 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
 
   return (
     <nav
-      // className={`block w-full sticky top-0 z-[9999] transition-all duration-300 ${
-      //   isScrolled
-      //     ? 'bg-white shadow-md border-gray-300'
-      //     : 'bg-transparent border-b border-gray-400'
-      // }`}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out border-b ${
         isScrolled
           ? 'bg-white text-black py-0 border-gray-300 '
@@ -168,7 +163,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                     href={`/${country}${item.href}` || '#'}
                     className={`relative block transition-all duration-300 ${
                       isScrolled
-                        ? 'text-gray-800 after:bottom-[-36px]'
+                        ? 'text-gray-800 after:bottom-[-37px]'
                         : 'text-white after:bottom-[-62px]'
                     } hover:text-primary 
             after:content-[''] after:absolute after:left-0  
