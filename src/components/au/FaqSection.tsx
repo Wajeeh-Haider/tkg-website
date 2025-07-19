@@ -80,9 +80,12 @@ const FaqSection = () => {
           ))}
 
           <div className="mt-6">
-            <button className="px-5 py-3 bg-[#1A4D4A] text-white font-semibold text-sm uppercase rounded hover:bg-[#133f3c] transition">
-              View All
-            </button>
+        <a
+          href="#"
+          className="inline-block px-7 py-4 bg-white border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition duration-300"
+        >
+          VIEW ALL
+        </a>
           </div>
         </div>
 
