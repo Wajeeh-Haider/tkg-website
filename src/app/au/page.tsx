@@ -7,8 +7,9 @@ import GoogleReviews from "@/components/au/GoogleReview";
 import PetAtHome from "@/components/au/PetAtHome";
 import EuthanasiaServices from "@/components/au/EuthanasiaServices";
 import HowItWorks from "@/components/au/HowItWork";
-import FaqSection from "@/components/au/FaqSection";
+// import FaqSection from "@/components/au/FaqSection";
 import Blogs from "@/components/au/Blogs";
+import Faqs from "@/components/au/Faqs";
 // import Footer from "@/components/Footer";
 
 const Page = () => {
@@ -26,7 +27,7 @@ const Page = () => {
       <div
         className="bg-[url('/images/background.jpg')] bg-cover bg-center h-screen text-white"
       >
-        <div className="container mx-auto px-6 h-full flex flex-col justify-center items-start space-y-6">
+        <div className="container mx-auto px-6 h-full flex flex-col justify-center items-start space-y-6 ">
           {/* Google Review Image */}
           <Image
             src="/images/google-review.png"
@@ -37,7 +38,7 @@ const Page = () => {
           />
 
           {/* Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl font-serif">
+          <h1 className="text-[40px] md:text-6xl lg:text-7xl  font-bold leading-tight max-w-4xl font-serif">
             Peaceful euthanasia for <br />
             <span className="text-primary">beloved pets</span> in the <br />
             comfort of home
@@ -46,12 +47,12 @@ const Page = () => {
           {/* Buttons */}
           <div className="flex flex-wrap gap-4 mt-4">
             <Link href="/book-home-euthanasia">
-              <button className="bg-primary text-white px-6 py-3 rounded font-semibold transition duration-300 hover:bg-teal-600 cursor-pointer">
+              <button className="text-[13.125px] lg:text-[15px] bg-primary text-white px-6 py-3 rounded font-semibold transition duration-300 hover:bg-teal-600 cursor-pointer">
                 BOOK A HOME EUTHANASIA
               </button>
             </Link>
             <Link href="/book-pet-collection">
-              <button className="text-white font-semibold px-6 py-3 rounded hover:px-7 transition-all duration-300 cursor-pointer flex items-center group">
+              <button className="text-[13.125px] lg:text-[15px] text-white font-semibold px-6 py-3 rounded hover:px-7 transition-all duration-300 cursor-pointer flex items-center group">
                 BOOK A PET COLLECTION{" "}
                 <span className="ml-2 group-hover:ml-4 transition-all duration-300">
                   &gt;
@@ -62,12 +63,13 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Google Reviews Section */}
+
       <GoogleReviews />
-      <PetAtHome />
+      {/* <PetAtHome /> */}
       <EuthanasiaServices/>
       <HowItWorks />
-      <FaqSection />
+      
+      <Faqs/>
       <Blogs />
 
       {/* Footer */}

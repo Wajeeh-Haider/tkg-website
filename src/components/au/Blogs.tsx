@@ -1,30 +1,36 @@
 import React from 'react'
+import Articlecard from './Articlecard';
+
+const blogsData = [
+  {title: 'How to Talk to Your Child About Losing a Cat: Expert Tips That Work', content: 'Learn How to Talk to Your Child About Losing a Cat, here are 5 compassionate strategies to help your child process the loss of a…', date: 'July 26, 2025'},
+  {title: 'The Ultimate Guide to At-Home Cat Euthanasia', content: 'This is your ultimate guide to at-home cat euthanasia Cat euthanasia at home is one of the most compassionate decisions you can make when your…' , date: 'May 2, 2025' },
+  {title: '5 Subtle Signs It’s Time to Say Goodbye to Your Cat', content: 'Wondering when to say goodbye to your cat? Learn 5 gentle signs your cat may be suffering and how in-home euthanasia brings peace and dignity…' , date: 'May 2, 2025'},
+  {title: '6 Powerful Benefits of In-Home Euthanasia for Your Cat in Geelong and the Bellarine Peninsula', content: 'Here are 6 Powerful Benefits of In-Home Euthanasia for Your Cat in Geelong and the Bellarine Peninsula. Cats are emotionally complex creatures. They build deep…' , date: 'May 2, 2025'}
+];
+
 
 const Blogs = () => {
   return (
     <div>
         <section className="bg-white dark:bg-cream">
-  <div className=" container mx-auto mt-20 pb-30 pt-30">
-      <div className="mb-17 ">
-          <h2 className=" text-3xl lg:text-7xl tracking-tight font-serif text-primary">Blog</h2>
+  <div className=" container mx-auto  xl:pb-30 pb-10 pt-30 xl:pr-0 md:pr-4 pr-2 xl:pl-0 pl-2 md:pl-4">
+      <div className="flex flex-row justify-between xl:mb-15 mb-4 ">
+        <div>
+          <h2 className=" text-[27.68px] xl:text-7xl tracking-tight font-serif text-primary">Blog</h2>
+        </div>
+        <div>
+          <a
+          href="#"
+          className="inline-block lg:px-7 px-4 lg:py-4 py-3 text-[13px] lg:text-[16px] bg-cream border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition"
+        >
+          ALL NEWS
+        </a>
+        </div>
       </div> 
-      <div className="grid gap-8 lg:grid-cols-3">
-          <article className="p-6 bg-white rounded-lg  dark:bg-cream ">
-              
-              <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black"><a href="#">How to quickly deploy a static website</a></h2>
-              <p className="mb-5 font-light text-gray-500 dark:text-gray-400">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers influence both web designers and developers.</p>
-              <div className="flex justify-between items-center">
-                  <div className="flex items-center space-x-4">
-                      <span className="font-medium dark:text-gray-400 ">
-                          July 26,2025
-                      </span>
-                  </div>
-                  <a href="#" className="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">
-                      Read more
-                      <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
-              </div>
-          </article>                   
+      <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        {blogsData.map((blog, index) => (
+          <Articlecard key={index} {...blog} />
+        ))}        
       </div>  
   </div>
 </section>

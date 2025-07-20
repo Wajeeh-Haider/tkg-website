@@ -34,26 +34,28 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="container mx-auto py-16">
-      <h2 className="text-8xl font-serif text-primary mb-10 text-left">How It Works</h2>
+    <div className="bg-[#FEFBF8]">
+      {/* Main container */}
+    <div className="container mx-auto py-16 xl:pr-0 md:pr-4 pr-2 xl:pl-0 pl-2 md:pl-4">
+      <h2 className="xl:mt-20 md:mt-10 mt-1 md:20 xl:text-8xl md:text-[38.72px] text-[27.68px] font-serif text-primary  lg:mb-10 md:mb-10 mb-1 text-left">How It Works</h2>
 
-      <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6">
+      <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 ">
         {steps.map((step, idx) => (
-          <div key={idx} className="relative flex-1 min-w-[250px] p-6 bg-white overflow-hidden">
+          <div key={idx} className="relative flex-1 min-w-[250px] xl:p-6 p-0 bg-[#FEFBF8] overflow-hidden ">
             {/* Background number */}
-            <span className="absolute text-[300px] font-serif text-[#f0ede9] top-0 left-0 z-0 select-none leading-none">
+            <span className="absolute xl:text-[300px] md:text-[210px] text-[200px] font-serif text-[#f0ede9] lg:top-0 top-4 left-0 z-0 select-none leading-none">
               {step.number}
             </span>
 
             {/* Card content */}
             <div className="relative z-10 mt-20">
-              <h3 className="text-5xl font-serif text-gray-700 mb-10">{step.title}</h3>
-              <p className="text-[17px] text-[#727171] leading-[2.2] font-sans mb-4">
+              <h3 className="xl:text-5xl md:text-[32.32px] text-[25.5px] font-serif text-gray-700 lg:mb-10 mb-5">{step.title}</h3>
+              <p className="xl:text-[17px] text-[14px] text-[#727171] leading-[2.2] font-sans mb-4">
                 {step.description}
               </p>
               <a
                 href="#"
-                className="text-primary text-lg font-semibold rounded cursor-pointer flex items-center group"
+                className="text-primary text-[14px] xl:text-[18px] font-semibold rounded cursor-pointer flex items-center group"
               >
                 {step.cta}
                 <span className="ml-2 group-hover:ml-4 transition-all duration-300">
@@ -69,11 +71,12 @@ const HowItWorks = () => {
       <div className="text-center mt-12">
         <a
           href="#"
-          className="inline-block px-7 py-4 bg-white border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition"
+          className="inline-block px-7 py-4 text-[13px] lg:text-[16px] bg-white border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition"
         >
           LEARN MORE
         </a>
       </div>
+    </div>
     </div>
   );
 };

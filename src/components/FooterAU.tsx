@@ -21,14 +21,14 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <nav className="flex flex-col space-y-2 gap-6 md:mt-5">
+                        <div className="flex flex-col space-y-2 gap-6 md:mt-5">
                             <Link href="/about" className="hover:underline text-white font-sans">How It Works</Link>
                             <Link href="/services" className="hover:underline text-white font-sans">About Us</Link>
                             <Link href="/about" className="hover:underline text-white font-sans">Locations</Link>
                             <Link href="/pricing" className="hover:underline text-white font-sans">Pricing</Link>
                             <Link href="/locations" className="hover:underline text-white font-sans">Blog</Link>
                             <Link href="/faqs" className="hover:underline text-white font-sans">FAQs</Link>
-                        </nav>
+                        </div>
                     </div>
 
                     <div>
