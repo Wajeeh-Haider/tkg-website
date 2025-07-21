@@ -182,7 +182,7 @@ export default function Home() {
 
             <div className="flex gap-4 px-6 mt-6">
               {/* Facebook */}
-              <a
+              <Link
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -196,10 +196,10 @@ export default function Home() {
                 >
                   <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.5 1.5-3.89 3.8-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12Z" />
                 </svg>
-              </a>
+              </Link>
 
               {/* Instagram */}
-              <a
+              <Link
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -213,7 +213,7 @@ export default function Home() {
                 >
                   <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
@@ -282,10 +282,10 @@ export default function Home() {
               ©The Kindest Goodbye 2025
             </h3>
             <p className="font-sans text-[13px]">
-              Website by
-              <a href="#" className="underline hover:text-white/80">
+              Website by &nbsp;
+              <Link href="#" className="underline hover:text-white/80">
                 SGD
-              </a>
+              </Link>
             </p>
           </div>
         </div>

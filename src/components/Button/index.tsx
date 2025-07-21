@@ -6,12 +6,19 @@ interface ButtonProps {
   label: string;
   icon?: React.ReactNode;
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export default function Button({ label, icon, className = '' }: ButtonProps) {
+export default function Button({
+  onClick,
+  label,
+  icon,
+  className = '',
+}: ButtonProps) {
   return (
     <button
-      className={`flex items-center gap-1 text-[13.5px] font-sans  bg-primary text-white rounded transition ${className}`}
+      onClick={onClick}
+      className={`flex items-center gap-1 text-[13.5px] font-sans rounded transition ${className}`}
     >
       <h4>{label}</h4>
       {icon && (

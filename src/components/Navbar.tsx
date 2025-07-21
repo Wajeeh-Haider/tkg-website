@@ -10,16 +10,16 @@ const navLinks = [
   {
     title: 'Our Services',
     subLinks: [
-      { label: 'Home Euthanasia', href: '/services/home-euthanasia' },
-      { label: 'Cremation / Aftercare', href: '/services/cremation-aftercare' },
+      { label: 'Home Euthanasia', href: '/uk/how-it-works' },
+      { label: 'Cremation / Aftercare', href: '/uk/aftercare-services' },
     ],
   },
   { title: 'About Us', href: '/about-us' },
   { title: 'Pricing', href: '/pricing' },
   { title: 'Locations', href: '/locations' },
   { title: 'FAQs', href: '/faqs' },
-  { title: 'Quality of Life Scale', href: '/quality-of-life-scale' },
-  { title: 'Contact', href: '/pricing' },
+  { title: 'Quality of Life Scale', href: '/quality-of-life' },
+  { title: 'Contact', href: '/contact' },
   { title: 'Call Us - 0330 2366 999', href: '/call-us' },
 ];
 

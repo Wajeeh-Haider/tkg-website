@@ -69,7 +69,7 @@ function Faqs() {
   };
 
   return (
-    <div className="bg-[#FEFBF8]">
+    <div className="bg-[#FEFBF8] pb-8">
       <div className="container mx-auto px-6">
         <h1 className="text-[27.5px] md:text-[38.5px] font-serif mb-12 text-[#404040]">
           FAQS
