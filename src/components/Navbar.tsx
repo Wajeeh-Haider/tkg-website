@@ -5,23 +5,43 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-const navLinks = [
-  { title: 'Home', href: '/home' },
-  {
-    title: 'Our Services',
-    subLinks: [
-      { label: 'Home Euthanasia', href: '/uk/how-it-works' },
-      { label: 'Cremation / Aftercare', href: '/uk/aftercare-services' },
-    ],
-  },
-  { title: 'About Us', href: '/about-us' },
-  { title: 'Pricing', href: '/pricing' },
-  { title: 'Locations', href: '/locations' },
-  { title: 'FAQs', href: '/faqs' },
-  { title: 'Quality of Life Scale', href: '/quality-of-life' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Call Us - 0330 2366 999', href: '/call-us' },
-];
+const navLinks = {
+  uk: [
+    { title: 'Home', href: '/' },
+    {
+      title: 'Our Services',
+      subLinks: [
+        { label: 'Home Euthanasia', href: '/uk/how-it-works' },
+        { label: 'Cremation / Aftercare', href: '/uk/aftercare-services' },
+      ],
+    },
+    { title: 'About Us', href: '/uk/about-us' },
+    { title: 'Pricing', href: '/uk/pricing' },
+    { title: 'Locations', href: '/uk/locations' },
+    { title: 'FAQs', href: '/uk/faqs' },
+    { title: 'Quality of Life Scale', href: '/uk/quality-of-life' },
+    { title: 'Contact', href: '/uk/contact' },
+    { title: 'Call Us - 0330 2366 999', href: '/uk/call-us' },
+  ],
+  au: [
+    { title: 'Home', href: '/' },
+    {
+      title: 'Our Services',
+      subLinks: [
+        { label: 'Home Euthanasia', href: '/au/how-it-works' },
+        { label: 'Pet Collection', href: '/au/pet-collection' },
+        { label: 'Cremation / Aftercare', href: '/au/aftercare-services' },
+      ],
+    },
+    { title: 'About Us', href: '/au/about-us' },
+    { title: 'Pricing', href: '/au/pricing' },
+    { title: 'Locations', href: '/au/locations' },
+    { title: 'FAQs', href: '/au/faqs' },
+    { title: 'Quality of Life Scale', href: '/au/quality-of-life' },
+    { title: 'Contact', href: '/au/contact' },
+    { title: 'Call Us - 0330 2366 999', href: '/call-us' },
+  ],
+};
 
 export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +59,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const links = navLinks[country] || navLinks.uk;
 
   return (
     <nav
@@ -125,7 +146,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
               isScrolled ? 'text-gray-800' : 'text-white'
             }`}
           >
-            {navLinks.map((item, index) => (
+            {links.map((item, index) => (
               <li key={index} className="relative group">
                 {item.subLinks ? (
                   <>
@@ -160,7 +181,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                   </>
                 ) : (
                   <Link
-                    href={`/${country}${item.href}` || '#'}
+                    href={item.href || '#'}
                     className={`relative block transition-all duration-300 ${
                       isScrolled
                         ? 'text-gray-800 after:bottom-[-37px]'
@@ -178,7 +199,6 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
             ))}
           </ul>
         </div>
-
         {/* Appointment Button */}
         <div className="">
           <Link
@@ -221,87 +241,85 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
             <p className="text-background font-sans text-sm py-5 ml-2">
               0330 2366 999
             </p>
-            <hr className="my-1 border-gray-300" />
-          </div>
-
-          <ul className="flex flex-col gap-4 mt-6">
-            {navLinks.map((item, index) => (
-              <li key={index}>
-                {item.subLinks ? (
-                  <div className="group">
-                    <button
-                      onClick={() => toggleDropdown(index)}
-                      className="w-full text-left cursor-pointer text-[17.5px] font-sans text-[#404040] flex justify-between items-center pr-2"
+            <ul className="flex flex-col gap-4 mt-6">
+              {links.map((item, index) => (
+                <li key={index}>
+                  {item.subLinks ? (
+                    <div className="group">
+                      <button
+                        onClick={() => toggleDropdown(index)}
+                        className="w-full text-left cursor-pointer text-[17.5px] font-sans text-[#404040] flex justify-between items-center pr-2"
+                      >
+                        {item.title}
+                        <div
+                          className={`ml-2 w-8 h-8 rounded-full bg-white border border-foreground flex items-center justify-center transition-transform duration-300 ${
+                            openDropdown === index ? 'rotate-180' : ''
+                          }`}
+                        >
+                          <ChevronDownIcon className="w-6 h-6 text-primary" />
+                        </div>
+                      </button>
+                      {openDropdown === index && (
+                        <ul className="ml-4 mt-2">
+                          {item.subLinks.map((sub, i) => (
+                            <li key={i}>
+                              <Link
+                                href={sub.href}
+                                className="block py-1 text-[16px] font-sans text-[#404040]"
+                                onClick={() => setMenuOpen(false)}
+                              >
+                                {sub.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href || '#'}
+                      className="block text-[17.5px] font-sans text-[#404040]"
+                      onClick={() => setMenuOpen(false)}
                     >
                       {item.title}
-                      <div
-                        className={`ml-2 w-8 h-8 rounded-full bg-white border border-foreground flex items-center justify-center transition-transform duration-300 ${
-                          openDropdown === index ? 'rotate-180' : ''
-                        }`}
-                      >
-                        <ChevronDownIcon className="w-6 h-6 text-primary" />
-                      </div>
-                    </button>
-                    {openDropdown === index && (
-                      <ul className="ml-4 mt-2">
-                        {item.subLinks.map((sub, i) => (
-                          <li key={i}>
-                            <Link
-                              href={sub.href}
-                              className="block py-1 text-[16px] font-sans text-[#404040]"
-                              onClick={() => setMenuOpen(false)}
-                            >
-                              {sub.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    href={item.href || '#'}
-                    className="block text-[17.5px] font-sans text-[#404040]"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                )}
-              </li>
-            ))}
+                    </Link>
+                  )}
+                </li>
+              ))}
 
-            {/* Social Links */}
-            <div className="flex gap-4 px-6 mt-6">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
-              >
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
+              {/* Social Links */}
+              <div className="flex gap-4 px-6 mt-6">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
                 >
-                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.5 1.5-3.89 3.8-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12Z" />
-                </svg>
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
-              >
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                  >
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.5 1.5-3.89 3.8-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12Z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
                 >
-                  <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
-                </svg>
-              </a>
-            </div>
-          </ul>
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                  >
+                    <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
+                  </svg>
+                </a>
+              </div>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

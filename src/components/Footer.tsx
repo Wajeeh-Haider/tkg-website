@@ -2,8 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebookF } from 'react-icons/fa';
-import { BiLogoInstagramAlt } from 'react-icons/bi';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 

@@ -22,35 +22,29 @@ const Input: React.FC<InputFieldProps> = ({
   error,
 }) => {
   return (
-    <div className="flex flex-col w-full">
-      <div className="flex items-center">
-        <label
-          htmlFor={name}
-          className="text-sm font-sans text-[#404040] pb-0.5"
-        >
-          {label}
-        </label>
-        <div className="text-red-500 ml-1">*</div>
-      </div>
+    <div className="w-full">
+      <label
+        htmlFor={name}
+        className={`block mb-1 font-sans text-[#404040] text-sm lg:text-[16px] ${
+          error ? 'text-[#f44336]' : 'text-[#404040]'
+        }`}
+      >
+        {label}
+      </label>
       <input
         id={name}
-        type={type}
         name={name}
-        value={value}
+        type={type}
         placeholder={placeholder}
+        value={value}
         onChange={onChange}
-        className={`px-4 py-3 rounded-lg border text-sm font-sans text-[#404040] outline-none transition-all duration-150
-          ${
-            error
-              ? 'border-error500 focus:border-error500 placeholder:text-error500 text-sm font-normal'
-              : 'border-grey300 focus:border-primary placeholder:text-[#060606]'
-          }`}
+        className={`w-full h-12 px-4 border rounded-md focus:outline-none focus:ring-2 ${
+          error
+            ? 'border-[#f44336] focus:ring-[#f44336]'
+            : 'border-[#406060] focus:ring-[#CEE1DF]'
+        }`}
       />
-      {error && (
-        <small className="text-error500 pt-0.5 text-sm font-normal">
-          {error}
-        </small>
-      )}
+      {error && <p className="text-[#f44336] text-sm mt-1">{error}</p>}
     </div>
   );
 };

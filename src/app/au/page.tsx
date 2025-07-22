@@ -1,81 +1,53 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import GoogleReviews from "@/components/au/GoogleReview";
-import PetAtHome from "@/components/au/PetAtHome";
-import EuthanasiaServices from "@/components/au/EuthanasiaServices";
-import HowItWorks from "@/components/au/HowItWork";
-// import FaqSection from "@/components/au/FaqSection";
-import Blogs from "@/components/au/Blogs";
-import Faqs from "@/components/au/Faqs";
-// import Footer from "@/components/Footer";
-
-const Page = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null; // prevent hydration mismatch
-
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import Herosection from '@/components/au/Herosection';
+import Blogs from '@/components/au/Blogs';
+import Faqs from '@/components/au/Faqs';
+import Googlereviews from '@/components/au/Googlereviews';
+import HowItsWork from '@/components/au/Howitswork';
+import Petathome from '@/components/au/Petathome';
+import React from 'react';
+import Euthanasiaservice from '@/components/au/Euthanasiaservice';
+const cardsData = [
+  {
+    imageSrc: '/images/pet.svg',
+    alt: 'Home Icon',
+    title: 'At-Home Pet Euthanasia',
+    description:
+      'One of our dedicated vets will visit you to perform your at-home pet euthanasia. From the moment of arrival, everything is done to make the process as peaceful and stress-free as possible for them and you, ensuring we can give your beloved pet the kindest goodbye possible.',
+    buttonLabel: 'BOOK NOW',
+    buttonHref: '/au',
+    bgColor: '#E5F2F2', // optional override
+  },
+  {
+    imageSrc: '/images/Petlove.svg',
+    alt: 'Aftercare Icon',
+    title: 'Aftercare Services',
+    description:
+      'We offer a wide range of individual cremation options through our crematorium partners. Cremation without the return of ashes is also available, or we can leave your pet in your care if you wish to make your own arrangements.',
+    buttonLabel: 'LEARN MORE',
+    buttonHref: '/au',
+    bgColor: '#E8EFF4',
+  },
+];
+function page() {
   return (
-    <div>
-      {/* Background and main content */}
-      <div
-        className="bg-[url('/images/background.jpg')] bg-cover bg-center h-screen text-white"
-      >
-        <div className="container mx-auto px-6 h-full flex flex-col justify-center items-start space-y-6 ">
-          {/* Google Review Image */}
-          <Image
-            src="/images/google-review.png"
-            alt="Google Review"
-            width={110}
-            height={40}
-            priority
-          />
-
-          {/* Heading */}
-          <h1 className="text-[40px] md:text-6xl lg:text-7xl  font-bold leading-tight max-w-4xl font-serif">
-            Peaceful euthanasia for <br />
-            <span className="text-primary">beloved pets</span> in the <br />
-            comfort of home
-          </h1>
-
-          {/* Buttons */}
-          <div className="flex flex-wrap gap-4 mt-4">
-            <Link href="/book-home-euthanasia">
-              <button className="text-[13.125px] lg:text-[15px] bg-primary text-white px-6 py-3 rounded font-semibold transition duration-300 hover:bg-teal-600 cursor-pointer">
-                BOOK A HOME EUTHANASIA
-              </button>
-            </Link>
-            <Link href="/book-pet-collection">
-              <button className="text-[13.125px] lg:text-[15px] text-white font-semibold px-6 py-3 rounded hover:px-7 transition-all duration-300 cursor-pointer flex items-center group">
-                BOOK A PET COLLECTION{" "}
-                <span className="ml-2 group-hover:ml-4 transition-all duration-300">
-                  &gt;
-                </span>
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-
-      <GoogleReviews />
-      {/* <PetAtHome /> */}
-      <EuthanasiaServices/>
-      <HowItWorks />
-      
-      <Faqs/>
+    <div className="bg-[#FEFBF8]">
+      <Navbar country="au" />
+      <Herosection />
+      <Googlereviews />
+      <Petathome />
+      <Euthanasiaservice
+        title="In-Home Pet Euthanasia Services"
+        cardsData={cardsData}
+      />
+      <HowItsWork />
+      <Faqs />
       <Blogs />
 
-      {/* Footer */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
-};
+}
 
-export default Page;
+export default page;

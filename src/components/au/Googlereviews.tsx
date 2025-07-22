@@ -12,33 +12,33 @@ import { StarIcon } from '@heroicons/react/20/solid';
 const reviews = [
   {
     id: 1,
-    name: 'Lexy M',
-    date: '2025-07-11',
-    text: 'We needed them in the middle of the night. He drove an hour and a half and got here just before midnight. I...',
+    name: 'Vicki Dunne',
+    date: '2025-05-18',
+    text: 'I have put off this review for a while now because it seemed a little strange but the team at the Kindest Goodbye and the...',
   },
   {
     id: 2,
-    name: 'Sam T',
-    date: '2025-07-10',
-    text: 'Very professional and compassionate staff. Arrived quickly and showed amazing care.',
+    name: 'Sahra Ashford',
+    date: '2025-05-11',
+    text: 'Highly recommend The kindest goodbye.. We had Dr Sha Singh and she was so incredibly warm, caring and kind. The...',
   },
   {
     id: 3,
-    name: 'Nina B',
-    date: '2025-07-08',
-    text: 'They went above and beyond. Quick response and great experience overall.',
+    name: 'Anoushka Roman',
+    date: '2025-05-02',
+    text: 'After a heartbreaking decision on Christmas Eve, we had to make a painful decision to say goodbye to our beautiful Kira...',
   },
   {
     id: 4,
-    name: 'Daniel W',
-    date: '2025-07-05',
-    text: 'Support was incredible, very thankful they were available late at night.',
+    name: 'Monica Keskitalo',
+    date: '2025-03-28',
+    text: 'Thank you to the team at The Kindest Goodbye. Your service is outstanding.A HUGE thank you to Dr. Sha...',
   },
   {
     id: 5,
-    name: 'Emily R',
-    date: '2025-07-03',
-    text: 'They truly care about their clients. Very kind and helpful service.',
+    name: 'Melissa Thang',
+    date: '2025-03-18',
+    text: 'A heartfelt thank you to Dr. Chad Elbaali and the entire team for their incredible care from start to finish. Dr. Chad...',
   },
 ];
 
@@ -48,11 +48,11 @@ export default function Googlereviews() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="bg-[#FEFBF8] py-10 pt-40">
+    <div className="bg-[#FEFBF8] py-10">
       <div
         id="scroll-target"
         ref={contentRef}
-        className="container mx-auto md:grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8   lg:pr-15 xl:pr-0 items-center relative"
+        className="container mx-auto md:grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 p-6 md:pl-15 lg:pr-15 xl:pr-0 items-center relative"
       >
         <div className="flex flex-col py-6 mb-8 items-center text-center">
           <h2 className="text-2xl font-bold mb-1 font-sans text-gray-800">
@@ -66,7 +66,7 @@ export default function Googlereviews() {
           </div>
 
           <p className="text-gray-600 text-sm">
-            Based on <strong>141+ reviews</strong>
+            Based on <strong>232+ reviews</strong>
           </p>
 
           <div className="flex items-center gap-2 mt-4">
@@ -186,4 +186,3 @@ export default function Googlereviews() {
     </div>
   );
 }
-

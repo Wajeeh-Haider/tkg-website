@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import Faqs from '@/components/uk/Faqs';
 import Petathome from '@/components/uk/Petathome';
 import Euthanasiaservice from '@/components/uk/Euthanasiaservice';
+import Blogs from '@/components/uk/Blogs';
 
 const cardsData = [
   {
@@ -33,8 +34,8 @@ const cardsData = [
 ];
 function Home() {
   return (
-    <>
-      <Navbar />
+    <div className="bg-[#FEFBF8]">
+      <Navbar country="uk" />
       <Herosection />
       <Googlereviews />
       <Petathome />
@@ -45,8 +46,10 @@ function Home() {
       <HowItsWork />
       <Homerespect />
       <Faqs />
+      <Blogs />
+
       <Footer />
-    </>
+    </div>
   );
 }
 

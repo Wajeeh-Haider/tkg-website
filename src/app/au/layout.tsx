@@ -31,9 +31,7 @@ export default function RootLayout({
       <body
         className={`${dmSerifDisplay.variable} ${poppins.variable} antialiased`}
       >
-        <Navbar country="au" />
         {children}
-        <Footer />
       </body>
     </html>
   );

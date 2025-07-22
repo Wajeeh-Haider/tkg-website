@@ -6,7 +6,7 @@ import React from 'react';
 
 function page() {
   return (
-    <div className="bg-[#fefbf8]">
+    <div className="bg-[#FEFBF8]">
       <Navbarhome />
       <Hero title="Contact Us" breadcrumb="Contact Us" linkHref="/uk" />
       <Formsection />

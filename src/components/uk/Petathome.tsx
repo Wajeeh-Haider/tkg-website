@@ -8,13 +8,12 @@ import Image from 'next/image';
 const Petathome = () => {
   return (
     <div className="relative bg-[#FEFBF8] mx-6 xl:mx-0 overflow-hidden py-16">
-      <div className="absolute top-0 left-0 w-full h-full -z-10">
+      <div className="absolute left-0 bottom-0 w-[500px] h-[400px] pointer-events-none z-0">
         <Image
           src="/images/decor1.svg"
-          alt="Decor"
-          className="w-auto h-auto object-contain opacity-20"
-          width={352}
-          height={352}
+          alt="Decorative Background"
+          fill
+          className="object-cover"
         />
       </div>
 

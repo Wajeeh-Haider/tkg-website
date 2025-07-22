@@ -69,7 +69,15 @@ function Faqs() {
   };
 
   return (
-    <div className="bg-[#FEFBF8] pb-8">
+    <div className="relative overflow-hidden pb-8 ">
+      <div className="absolute left-0 bottom-0 w-[500px] h-[400px] pointer-events-none z-0">
+        <Image
+          src="/images/decor1.svg"
+          alt="Decorative Background"
+          fill
+          className="object-cover"
+        />
+      </div>
       <div className="container mx-auto px-6">
         <h1 className="text-[27.5px] md:text-[38.5px] font-serif mb-12 text-[#404040]">
           FAQS
@@ -77,7 +85,7 @@ function Faqs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* FAQ List */}
-          <div className="space-y-4">
+          <div className="space-y-4 z-[99999]">
             {faqData.map((item, index) => {
               const isOpen = openIndex === index;
               return (
@@ -89,7 +97,7 @@ function Faqs() {
                     type="button"
                     onClick={() => toggle(index)}
                     className={`flex items-center justify-between w-full px-4 py-5 sm:p-6 cursor-pointer transition-colors ${
-                      isOpen ? 'bg-[#E5F2F2]' : ''
+                      isOpen ? 'bg-[#E5F2F2]' : 'bg-[#E5F2F2]'
                     }`}
                   >
                     <span
@@ -138,7 +146,7 @@ function Faqs() {
           </div>
 
           {/* Image */}
-          <div className="w-full">
+          <div className="w-full z-[99999]">
             <Image
               src="/images/dog2.jpg"
               alt="Pet and owner"

@@ -7,7 +7,7 @@ import React from 'react';
 
 function page() {
   return (
-    <div>
+    <div className="bg-[#FEFBF8]">
       <Navbarhome />
       <Hero title="How It Works" breadcrumb="How It Works" linkHref="/uk" />
       <Requestsection />
