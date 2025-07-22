@@ -6,12 +6,13 @@ import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const navLinks = [
-  { title: 'Home', href: '/uk' },
+  { title: 'Home', href: '/' },
   {
     title: 'Our Services',
     subLinks: [
-      { label: 'Home Euthanasia', href: '/uk/how-it-works' },
-      { label: 'Cremation / Aftercare', href: '/uk/aftercare-services' },
+      { label: 'Home Euthanasia', href: '/au/how-it-works' },
+      { label: 'Pet Collection', href: '/au/how-it-works' },
+      { label: 'Cremation / Aftercare', href: '/au/aftercare-services' },
     ],
   },
   { title: 'About Us', href: '/about-us' },
@@ -20,10 +21,10 @@ const navLinks = [
   { title: 'FAQs', href: '/faqs' },
   { title: 'Quality of Life Scale', href: '/quality-of-life' },
   { title: 'Contact', href: '/contact' },
-  { title: 'Call Us - 0330 2366 999', href: '/call-us' },
+  { title: 'Call Us - 1300 799 452', href: '/call-us' },
 ];
 
-function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
+function Navbarhome({ country = 'au' }: { country?: 'uk' | 'au' }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);

@@ -39,7 +39,7 @@ const navLinks = {
     { title: 'FAQs', href: '/au/faqs' },
     { title: 'Quality of Life Scale', href: '/au/quality-of-life' },
     { title: 'Contact', href: '/au/contact' },
-    { title: 'Call Us - 0330 2366 999', href: '/call-us' },
+    { title: 'Call Us - 1300 799 452', href: '/call-us' },
   ],
 };
 

@@ -1,71 +1,45 @@
-'use client';
+import React from 'react'
+import Articlecard from './Articlecard';
 
-import React from 'react';
-import Link from 'next/link';
-import Blogscard from '../Blogcard/blogcard';
-
-const blogsData: {
-  title: string;
-  content: string;
-  date: string;
-  image: string;
-}[] = [
-  {
-    title:
-      '10 Powerful Signs Your Dog Is Suffering This Summer: How to Understand When End of Life Is Near',
-    content:
-      'In this article, discover 10 powerful signs your dog is suffering this summer and how to recognise them. Summer is a special time in the…',
-    date: 'July 26, 2025',
-    image: '/images/blogimage4.jpg',
-  },
-  {
-    title:
-      '4 Essential Steps to Check If Your Pet Insurance Covers In-Home Euthanasia',
-    content:
-      'What Is In-Home Euthanasia? In-home euthanasia is a service provided by licensed veterinarians who visit your home to perform the euthanasia procedure. Your pet remains…',
-    date: 'May 2, 2025',
-    image: '/images/Is-there-a-special-place-on-your-tree-blog.png',
-  },
-  {
-    title: 'How to Arrange Home Euthanasia for Your Dog?',
-    content:
-      'You’re seeking to arrange a home euthanasia for your dog? Parting with a beloved pet is among the most heart-wrenching moments a pet owner can…',
-    date: 'May 2, 2025',
-    image: '/images/pet-euthanasia-at-home-blog.jpg',
-  },
-  {
-    title: 'Why In-Home Pet Euthanasia Can Be the Kindest Choice for Your Pet',
-    content:
-      'Saying farewell to a cherished pet is one of the most heart-wrenching experiences a pet owner can face. It’s a time filled with love, sorrow,…',
-    date: 'May 2, 2025',
-    image: '/images/blogimage4.jpg',
-  },
+const blogsData = [
+  {title: 'How to Talk to Your Child About Losing a Cat: Expert Tips That Work', content: 'Learn How to Talk to Your Child About Losing a Cat, here are 5 compassionate strategies to help your child process the loss of a…', date: 'July 26, 2025'},
+  {title: 'The Ultimate Guide to At-Home Cat Euthanasia', content: 'This is your ultimate guide to at-home cat euthanasia Cat euthanasia at home is one of the most compassionate decisions you can make when your…' , date: 'May 2, 2025' },
+  {title: '5 Subtle Signs It’s Time to Say Goodbye to Your Cat', content: 'Wondering when to say goodbye to your cat? Learn 5 gentle signs your cat may be suffering and how in-home euthanasia brings peace and dignity…' , date: 'May 2, 2025'},
+  {title: '6 Powerful Benefits of In-Home Euthanasia for Your Cat in Geelong and the Bellarine Peninsula', content: 'Here are 6 Powerful Benefits of In-Home Euthanasia for Your Cat in Geelong and the Bellarine Peninsula. Cats are emotionally complex creatures. They build deep…' , date: 'May 2, 2025'}
 ];
+
 
 const Blogs = () => {
   return (
-    <section className="bg-[#f6f0ea] py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="text-[27.68px] xl:text-7xl tracking-tight font-serif text-primary">
-            Blog
-          </h2>
-          <Link
-            href="#"
-            className="inline-block font-sans px-4 py-3 lg:px-7 lg:py-4 text-[13px] lg:text-[16px] bg-cream border-2 border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition"
-          >
-            ALL NEWS
-          </Link>
+    <div>
+        <section className="bg-white dark:bg-cream">
+  <div className=" container mx-auto  xl:pb-30 pb-10 pt-30 xl:pr-0 md:pr-4 pr-2 xl:pl-0 pl-2 md:pl-4">
+      <div className="flex flex-row justify-between xl:mb-15 mb-4 ">
+        <div>
+          <h2 className=" text-[27.68px] xl:text-7xl tracking-tight font-serif text-primary">Blog</h2>
         </div>
-
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {blogsData.map((blog, index) => (
-            <Blogscard key={index} {...blog} />
-          ))}
+        <div>
+          <a
+          href="#"
+          className="inline-block lg:px-7 px-4 lg:py-4 py-3 text-[13px] lg:text-[16px] bg-cream border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition"
+        >
+          ALL NEWS
+        </a>
         </div>
-      </div>
-    </section>
-  );
-};
+      </div> 
+      <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        {blogsData.map((blog, index) => (
+        <Articlecard
+          key={index}
+          title={blog.title}
+          content={blog.content}
+          date={blog.date}/>
+))}        
+      </div>  
+  </div>
+</section>
+    </div>
+  )
+}
 
-export default Blogs;
+export default Blogs
