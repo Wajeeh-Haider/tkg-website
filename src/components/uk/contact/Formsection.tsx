@@ -63,7 +63,7 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
   };
 
   return (
-    <div className="relative z-10 overflow-hidden min-h-screen gap-8 flex flex-col md:flex-row items-start justify-center p-4">
+    <div className="max-w-8xl mx-auto relative z-10 overflow-hidden min-h-screen gap-8 flex flex-col md:flex-row items-start justify-center p-4 xl:ml-12">
       <div className="absolute right-0 bottom-50 w-[300px] h-[300px] pointer-events-none">
         <Image
           src="/images/decor5.svg"

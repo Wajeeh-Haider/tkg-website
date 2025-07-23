@@ -84,7 +84,7 @@ export default function Home() {
 
             {/* Logo */}
             <Link
-              href="#"
+              href="/uk"
               className="block cursor-pointer py-1.5 text-base font-semibold"
             >
               <Image
@@ -111,18 +111,21 @@ export default function Home() {
             {/* Desktop Menu */}
             <div className="hidden lg:block ml-auto">
               <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                {['Australia', 'UK'].map((item) => (
-                  <li
-                    key={item}
-                    className={`flex items-center font-sans font-semibold p-1 text-[14px] gap-x-2 transition-colors duration-300 ${
-                      isScrolled ? 'text-[#404040]' : 'text-secondary'
-                    }`}
-                  >
-                    <Link href="#" className="flex items-center">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                {['Australia', 'UK'].map((item) => {
+                  const path = item === 'Australia' ? '/au' : '/uk';
+                  return (
+                    <li
+                      key={item}
+                      className={`flex items-center font-sans font-semibold p-1 text-[14px] gap-x-2 transition-colors duration-300 ${
+                        isScrolled ? 'text-[#404040]' : 'text-secondary'
+                      }`}
+                    >
+                      <Link href={path} className="flex items-center">
+                        {item}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -227,24 +230,24 @@ export default function Home() {
             height={55}
             className="ml-6 overflow-hidden"
           />
-          <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-extrabold md:w-[55%] lg:w-[66%] xl:w-[50%] leading-[1.1] mx-6 my-4 pt-2">
+          <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-semibold md:w-[60%] lg:w-[66%] xl:w-[62%] leading-[1.1] mx-6 my-4 pt-2">
             Peaceful euthanasia for
             <span className="text-primary"> beloved pets </span>in the comfort
             of home
           </h1>
           <div className="flex gap-2 py-4 ml-6">
-            <Link href="/uk">
+            <Link href="/uk/booking-request">
               <Button
                 label="UK"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+                className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
             <Link href="/au">
               <Button
                 label="Australia"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+                className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
           </div>

@@ -61,7 +61,7 @@ const Euthanasiaservice: React.FC<EuthanasiaserviceProps> = ({
                     <Button
                       label={card.buttonLabel}
                       icon={<ChevronRightIcon className="w-5 h-5" />}
-                      className="hover:gap-2 hover:opacity-80 text-[14px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+                      className="hover:gap-2 text-[#0e797d] hover:opacity-80 text-[14px] lg:text-[15px] font-medium px-4 py-3 lg:px-0 lg:py-3"
                     />
                   </Link>
                 </div>

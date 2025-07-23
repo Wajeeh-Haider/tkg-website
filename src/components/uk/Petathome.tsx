@@ -34,7 +34,7 @@ const Petathome = () => {
           <Link href="/uk">
             <Button
               label="READ MORE"
-              className="hover:gap-2 hover:opacity-80 text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+              className="hover:gap-2 hover:opacity-80 bg-[#0e797d] text-white text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
             />
           </Link>
         </div>

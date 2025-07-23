@@ -26,7 +26,7 @@ function Herosection() {
           height={55}
           className="ml-6 overflow-hidden"
         />
-        <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-extrabold w-[80%] md:w-[65%] lg:w-[70%] leading-[1.1] mx-6 my-4 pt-2">
+        <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-semibold leading-tight w-[80%] md:w-[65%] lg:w-[70%]  mx-6 my-4 pt-2">
           Peaceful Pet Euthanasia for
           <span className="text-primary"> beloved pets</span>
           &nbsp;in the <br /> comfort of home
@@ -37,7 +37,7 @@ function Herosection() {
           <Link href="/uk">
             <Button
               label="REQUEST A HOME EUTHANASIA"
-              className="hover:gap-2 hover:opacity-80 text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+              className="hover:gap-2 hover:opacity-80 bg-[#0e797d] text-white text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
             />
           </Link>
           <Link href="/au">

@@ -20,6 +20,9 @@ const faqData = [
         <li>We are blessed to be able to provide our pets with euthanasia as an end-of-life option. It is a peaceful, gentle and beautiful process that ensures they do not suffer unnecessarily and that we can give them the farewell they deserve embraced in our love.</li>
         <li>The below Quality of Life Scale may be of assistance in assessing your pet's individual situation.</li>
       </ul>
+  <a href='/uk/quality-of-life' class='inline-block px-7 py-4 mt-6 bg-primary text-white font-sans font-bold rounded border-2 border-primary hover:bg-[#20B1B7] hover:border-teal-700 transition duration-300'>
+    QUALITY OF LIFE SCALE FOR PETS
+  </a>
     `,
   },
   {
@@ -122,7 +125,10 @@ function Faqsservice() {
         <p className="text-[#404040] pt-8 text-[17px] font-sans text-center leading-6 pb-12">
           If you would like to speak to one of our vets in person about your
           end-of-life decision for your pet free-of-charge, please complete our{' '}
-          <Link href="/contact" className="text-[#406060] underline">
+          <Link
+            href="/contact"
+            className="text-[#406060] underline font-semibold"
+          >
             contact form
           </Link>{' '}
           and we will call you back ASAP.

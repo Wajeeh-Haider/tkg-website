@@ -69,92 +69,93 @@ function Faqs() {
   };
 
   return (
-    <div className="relative overflow-hidden pb-8 ">
-      <div className="absolute left-0 bottom-0 w-[500px] h-[400px] pointer-events-none z-0">
+    <div className="bg-[#FEFBF8]">
+      <div className="relative w-full h-full z-10">
         <Image
-          src="/images/decor1.svg"
-          alt="Decorative Background"
-          fill
-          className="object-cover"
+          src={'/images/decor1.svg'}
+          alt="decor"
+          height={700}
+          width={750}
+          className="absolute  h-[400px] w-[600px] bottom-0 left-0 -z-1 pointer-events-none"
         />
-      </div>
-      <div className="container mx-auto px-6">
-        <h1 className="text-[27.5px] md:text-[38.5px] font-serif mb-12 text-[#404040]">
-          FAQS
-        </h1>
+        <div className="container mx-auto pb-25 z-20 p-2">
+          <h1 className="lg:text-7xl text-[27.86px] font-serif text-[#333333] mb-8">
+            FAQS
+          </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* FAQ List */}
-          <div className="space-y-4 z-[99999]">
-            {faqData.map((item, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div
-                  key={index}
-                  className="transition-all duration-200 font-serif bg-[#E8EFF4] border border-gray-200"
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggle(index)}
-                    className={`flex items-center justify-between w-full px-4 py-5 sm:p-6 cursor-pointer transition-colors ${
-                      isOpen ? 'bg-[#E5F2F2]' : 'bg-[#E5F2F2]'
-                    }`}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* FAQ List */}
+            <div className="space-y-4">
+              {faqData.map((item, index) => {
+                const isOpen = openIndex === index;
+                return (
+                  <div
+                    key={index}
+                    className="transition-all duration-200 font-serif bg-[#E8EFF4] border border-gray-200"
                   >
-                    <span
-                      className={`text-[20.5px] md:text-[22.5px] md:pr-6 lg:pr-0  text-start transition-colors ${
-                        isOpen ? 'text-[#404040]' : 'text-[#404040]'
+                    <button
+                      type="button"
+                      onClick={() => toggle(index)}
+                      className={`flex items-center justify-between w-full px-4 py-5 sm:p-6 cursor-pointer transition-colors ${
+                        isOpen ? 'bg-[#E5F2F2]' : 'bg-[#E5F2F2]'
                       }`}
                     >
-                      {item.question}
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`w-6 h-6 transform transition-transform ${
-                        isOpen ? 'rotate-180 text-primary' : 'text-[#6591C0]'
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {isOpen && (
-                    <div className="px-4 pb-5 sm:px-6 sm:pb-6">
-                      <div
-                        className="faq-content text-[14px] text-[#404040] font-sans"
-                        dangerouslySetInnerHTML={{ __html: item.answer }}
-                      />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                      <span
+                        className={`text-[20.5px] md:text-[22.5px] md:pr-6 lg:pr-0  text-start transition-colors ${
+                          isOpen ? 'text-[#404040]' : 'text-[#404040]'
+                        }`}
+                      >
+                        {item.question}
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`w-6 h-6 transform transition-transform ${
+                          isOpen ? 'rotate-180 text-primary' : 'text-[#6591C0]'
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isOpen && (
+                      <div className="px-4 pb-5 sm:px-6 sm:pb-6">
+                        <div
+                          className="faq-content text-[14px] text-[#404040] font-sans"
+                          dangerouslySetInnerHTML={{ __html: item.answer }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
 
-            <Link href="/uk">
-              <Button
-                label="VIEW ALL"
-                className="hover:gap-2 hover:opacity-80 text-[14px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+              <Link href="/uk">
+                <Button
+                  label="VIEW ALL"
+                  className="hover:gap-2 hover:opacity-80 border border-[#0e797d] text-[#0e797d] text-[14px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+                />
+              </Link>
+            </div>
+
+            {/* Image */}
+            <div className="w-full ">
+              <Image
+                src="/images/dog2.jpg"
+                alt="Pet and owner"
+                width={800}
+                height={600}
+                className="w-full h-auto  object-cover"
+                priority
               />
-            </Link>
-          </div>
-
-          {/* Image */}
-          <div className="w-full z-[99999]">
-            <Image
-              src="/images/dog2.jpg"
-              alt="Pet and owner"
-              width={800}
-              height={600}
-              className="w-full h-auto  object-cover"
-              priority
-            />
+            </div>
           </div>
         </div>
       </div>

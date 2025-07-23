@@ -74,7 +74,7 @@ export default function HowItsWork() {
         <Link href="/uk" className="items-center flex justify-center mt-8">
           <Button
             label="LEARN MORE"
-            className="hover:gap-2 hover:opacity-80 text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+            className="hover:gap-2 hover:opacity-80 border border-[#0e797d] text-[#0e797d] text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
           />
         </Link>
       </div>

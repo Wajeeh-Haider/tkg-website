@@ -14,7 +14,7 @@ function Requestnow() {
           <div className="flex justify-center">
             <Button
               label="REQUEST NOW"
-              className="hover:gap-2 hover:opacity-80 text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+              className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
             />
           </div>
         </Link>
@@ -25,7 +25,7 @@ function Requestnow() {
           Call us &nbsp;
           <Link
             href="tel:03302366999"
-            className="text-[#000000] font-sans font-bold hover:underline"
+            className="text-[#000000] font-sans font-semibold hover:underline"
           >
             0330 2366 999
           </Link>
