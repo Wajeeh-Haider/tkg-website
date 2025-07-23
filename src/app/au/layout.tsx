@@ -1,8 +1,6 @@
+import Footerau from '@/components/au/Footerau';
 import type { Metadata } from 'next';
 import { DM_Serif_Display, Poppins } from 'next/font/google';
-// import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: '--font-dm-serif',
@@ -32,6 +30,7 @@ export default function RootLayout({
         className={`${dmSerifDisplay.variable} ${poppins.variable} antialiased`}
       >
         {children}
+        <Footerau/>
       </body>
     </html>
   );

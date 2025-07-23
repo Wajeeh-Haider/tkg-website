@@ -61,10 +61,10 @@ const EuthanasiaServices = () => {
                 wish to make your own arrangements.
               </p>
               <a
-                href="#"
+                href="/au/aftercare-services"
                 className="text-primary lg:text-1xl text-[14px] font-semibold mb-10 mt-10 rounded cursor-pointer flex items-center group"
               >
-                Learn More{' '}
+                LEARN MORE{' '}
                 <span className="ml-2 group-hover:ml-4 transition-all duration-300">
                   &gt;
                 </span>

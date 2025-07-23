@@ -1,23 +1,70 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Navbarhome from '@/components/au/Homes/Navbarhome';
-const page = () => {
+
+const Page = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    contactMethod: '',
+    message: '',
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    contactMethod: '',
+    message: '',
+  });
+
+  const handleChange = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormErrors((prev) => ({ ...prev, [field]: '' }));
+  };
+
+  const validateForm = () => {
+    const errors: typeof formErrors = { ...formErrors };
+    let valid = true;
+    for (const field in formData) {
+      if (!formData[field as keyof typeof formData]) {
+        errors[field as keyof typeof formErrors] = 'This field is required.';
+        valid = false;
+      }
+    }
+    setFormErrors(errors);
+    return valid;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    console.log('Form submitted:', formData);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      contactMethod: '',
+      message: '',
+    });
+  };
+
   return (
     <div>
-      <Navbarhome country="au" />
-      {/* Header Section */}
+      <Navbarhome country='au' />
       <div className="bg-[#E5F2F2]">
         <div className="container mx-auto lg:pt-67 pt-35 p-3  lg:pb-30 pb-10 ">
-          <h1 className="text-[40px] lg:text-[72px] font-serif text-primary">
-            Quality of Life Scale for Pets
-          </h1>
+          <h1 className="text-[40px] lg:text-[72px] font-serif text-primary">Contact</h1>
         </div>
       </div>
-      <div className="bg-[#F5F5F5]">
+      <div className="bg-[#FEFBF8]">
         <div className="relative w-full h-full z-10">
           <Image
-            src={'/images/decor2.svg'}
+            src={'/images/decor5.svg'}
             alt="decor"
             height={400}
             width={400}
@@ -25,7 +72,6 @@ const page = () => {
           />
           <div className="container mx-auto lg:pt-30 pt-10 lg:pb-30 pb-10 z-20">
             <div className="flex flex-col lg:flex-row  justify-center gap-10 p-6 md:p-10  max-w-8xl mx-auto">
-              {/* Form Section */}
               <div className="w-full lg:w-1/2">
                 <h3 className="text-[20.5px] md:text-[24.5px] font-serif text-[#404040]">
                   Phone{' '}
@@ -36,8 +82,9 @@ const page = () => {
                     1300 799 452
                   </Link>
                 </h3>
-                {/* Social Links */}
                 <div className="flex gap-4 px-4 mt-5">
+                  {/* Social Icons */}
+                   <div className="flex gap-4 px-4 mt-5">
                   <a
                     href="https://facebook.com"
                     target="_blank"
@@ -67,97 +114,101 @@ const page = () => {
                     </svg>
                   </a>
                 </div>
+                </div>
                 <div className="w-full h-[1px] bg-gray-300 my-7" />
 
-                <h2 className="text-[22.88px] lg:text-[32.16px] font-serif mb-4">
-                  Contact Form
-                </h2>
+                <h2 className="text-[22.88px] lg:text-[32.16px] font-serif mb-4">Contact Form</h2>
                 <p className="mb-6 text-gray-500 font-sans  text-[14px] lg:text-[17px] ">
-                  If you would like to speak to us about your pet’s quality of
-                  life, or have any other questions about our service, please
-                  complete the contact form below and one of our vets will call
-                  you back ASAP.
+                  If you would like to speak to us about your pet’s quality of life, or have any other questions about our service, please complete the contact form below and one of our vets will call you back ASAP.
                 </p>
 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-gray-900 font-semibold font-sans  text-[14px] lg:text-[17px] mb-1">
                       Your Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      className="w-full border border-gray-300 rounded px-6 py-4 focus:outline-none focus:ring focus:border-blue-500"
+                      className={`w-full border rounded px-6 py-4 focus:outline-none focus:ring ${formErrors.name ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="Enter your name"
-                      required
+                      value={formData.name}
+                      onChange={(e) => handleChange('name', e.target.value)}
                     />
+                    {formErrors.name && <p className="text-red-500 text-sm mt-1">{formErrors.name}</p>}
                   </div>
 
                   <div className="flex flex-col md:flex-row gap-4">
                     <div className="w-full">
-                      <label className="block text-gray-700 font-sans  text-[14px] lg:text-[17px] mb-1">
+                      <label className="block text-gray-700 font-sans text-[14px] lg:text-[17px] mb-1">
                         Email <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="email"
-                        className="w-full border border-gray-300 rounded px-6 py-4 focus:outline-none focus:ring focus:border-blue-500"
+                        className={`w-full border rounded px-6 py-4 focus:outline-none focus:ring ${formErrors.email ? 'border-red-500' : 'border-gray-300'}`}
                         placeholder="Enter your email"
-                        required
+                        value={formData.email}
+                        onChange={(e) => handleChange('email', e.target.value)}
                       />
+                      {formErrors.email && <p className="text-red-500 text-sm mt-1">{formErrors.email}</p>}
                     </div>
-
                     <div className="w-full">
-                      <label className="block text-gray-700 font-sans  text-[14px] lg:text-[17px] mb-1">
+                      <label className="block text-gray-700 font-sans text-[14px] lg:text-[17px] mb-1">
                         Phone <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="tel"
-                        className="w-full border border-gray-300 rounded px-6 py-4 focus:outline-none focus:ring focus:border-blue-500"
+                        className={`w-full border rounded px-6 py-4 focus:outline-none focus:ring ${formErrors.phone ? 'border-red-500' : 'border-gray-300'}`}
                         placeholder="Enter your phone"
-                        required
+                        value={formData.phone}
+                        onChange={(e) => handleChange('phone', e.target.value)}
                       />
+                      {formErrors.phone && <p className="text-red-500 text-sm mt-1">{formErrors.phone}</p>}
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-sans  text-[14px] lg:text-[17px] mb-1">
-                      Please advise your preferred method of initial contact{' '}
-                      <span className="text-red-500">*</span>
+                    <label className="block text-gray-700 font-sans text-[14px] lg:text-[17px] mb-1">
+                      Please advise your preferred method of initial contact <span className="text-red-500">*</span>
                     </label>
                     <select
-                      className="w-full border border-gray-300 text-gray-500 rounded px-6 py-4 focus:outline-none focus:ring focus:border-blue-500"
-                      required
+                      className={`w-full border text-gray-500 rounded px-6 py-4 focus:outline-none focus:ring ${formErrors.contactMethod ? 'border-red-500' : 'border-gray-300'}`}
+                      value={formData.contactMethod}
+                      onChange={(e) => handleChange('contactMethod', e.target.value)}
                     >
-                      <option>Phone call</option>
-                      <option>Text message/SMS</option>
+                      <option value="">Select...</option>
+                      <option value="Phone call">Phone call</option>
+                      <option value="Text message/SMS">Text message/SMS</option>
                     </select>
+                    {formErrors.contactMethod && <p className="text-red-500 text-sm mt-1">{formErrors.contactMethod}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-gray-700  font-sans  text-[14px] lg:text-[17px] mb-1">
+                    <label className="block text-gray-700 font-sans text-[14px] lg:text-[17px] mb-1">
                       Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       rows={4}
-                      className="w-full border border-gray-300 rounded px-6 py-4 focus:outline-none focus:ring focus:border-blue-500"
+                      className={`w-full border rounded px-6 py-4 focus:outline-none focus:ring ${formErrors.message ? 'border-red-500' : 'border-gray-300'}`}
                       placeholder="Write your message..."
-                      required
+                      value={formData.message}
+                      onChange={(e) => handleChange('message', e.target.value)}
                     ></textarea>
+                    {formErrors.message && <p className="text-red-500 text-sm mt-1">{formErrors.message}</p>}
                   </div>
 
                   <button
                     type="submit"
-                    className="bg-primary text-white px-6 py-4 rounded font-sans font-semibold hover:bg-teal-800 transition-all"
+                    className="bg-primary text-white px-6 py-4 rounded font-sans font-semibold hover:bg-teal-600 transition-all cursor-pointer"
                   >
                     SUBMIT
                   </button>
                 </form>
               </div>
 
-              {/* Image Section */}
               <div className="w-full lg:w-1/2">
-                <div className="relative w-full overflow-hidden ">
+                <div className="relative w-full  ">
                   <img
-                    src="/images/call-us-image.jpg" // You can replace this with your uploaded image path
+                    src="/images/call-us-image.jpg"
                     alt="Dog sitting on couch"
                     className="w-full h-auto object-cover"
                   />
@@ -171,4 +222,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

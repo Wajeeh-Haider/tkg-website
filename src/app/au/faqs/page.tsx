@@ -35,7 +35,7 @@ const faqData = [
     </li>
   </ul>
 
-  <a href='#' class='inline-block px-7 py-4 mt-6 bg-primary text-white font-sans font-bold rounded border-2 border-primary hover:bg-[#20B1B7] hover:border-teal-700 transition duration-300'>
+  <a href='/au/quality-of-life' class='inline-block px-7 py-4 mt-6 bg-primary text-white font-sans font-bold rounded border-2 border-primary hover:bg-[#20B1B7] hover:border-teal-700 transition duration-300'>
     QUALITY OF LIFE SCALE FOR PETS
   </a>
 `,
@@ -186,7 +186,7 @@ const page = () => {
               If you would like to speak to one of our vets in person about you
               end-of-life decision for your pet free-of-charge, please complete
               our{' '}
-              <a href="#" className="text-primary hover:underline">
+              <a href="/au/contact" className="text-primary hover:underline">
                 contact form
               </a>{' '}
               and we will call you back ASAP

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { DM_Serif_Display, Poppins } from 'next/font/google';
 import './globals.css';
-import Footer from '@/components/Footer';
 
 const dmSerifDisplay = DM_Serif_Display({
   variable: '--font-dm-serif',
@@ -31,7 +30,6 @@ export default function RootLayout({
         className={`${dmSerifDisplay.variable} ${poppins.variable} antialiased`}
       >
         {children}
-        <Footer/>
       </body>
     </html>
   );

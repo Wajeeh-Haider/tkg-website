@@ -66,7 +66,7 @@ answer: `
     </li>
   </ul>
 
-  <a href='#' class='inline-block px-7 py-4 mt-6 bg-primary text-white font-sans font-bold rounded border-2 border-primary hover:bg-[#20B1B7] hover:border-teal-700 transition duration-300'>
+  <a href='/au/quality-of-life' class='inline-block px-7 py-4 mt-6 bg-primary text-white font-sans font-bold rounded border-2 border-primary hover:bg-[#20B1B7] hover:border-teal-700 transition duration-300'>
     QUALITY OF LIFE SCALE FOR PETS
   </a>
 `,
@@ -125,7 +125,7 @@ function Faqs() {
           width={750}
           className="absolute bottom-0 left-0 -z-1 pointer-events-none"
         />
-        <div className="container mx-auto pb-25 z-20" >
+        <div className="container mx-auto pb-25 z-20 p-2" >
         <h1 className="lg:text-7xl text-[27.86px] font-serif text-[#333333] mb-8">
           FAQS
         </h1>
@@ -185,7 +185,7 @@ function Faqs() {
             })}
 
         <a
-          href="#"
+          href="/au/faqs"
           className="inline-block px-7 py-4 mt-5 bg-[#FEFBF8] border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition duration-300"
         >
           VIEW ALL

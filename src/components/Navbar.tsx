@@ -24,12 +24,12 @@ const navLinks = {
     { title: 'Call Us - 0330 2366 999', href: '/uk/call-us' },
   ],
   au: [
-    { title: 'Home', href: '/' },
+    { title: 'Home', href: '/au' },
     {
       title: 'Our Services',
       subLinks: [
         { label: 'Home Euthanasia', href: '/au/how-it-works' },
-        { label: 'Pet Collection', href: '/au/pet-collection' },
+        { label: 'Pet Collection', href: '/au/how-it-works-pet-collection' },
         { label: 'Cremation / Aftercare', href: '/au/aftercare-services' },
       ],
     },

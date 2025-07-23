@@ -357,7 +357,7 @@ export default function Journey({ customLabels }: FormsectionProps) {
                   type="checkbox"
                   checked={showButtons}
                   onChange={(e) => handleCheckboxChange(e, 1)}
-                  className="form-checkbox h-5 w-5 text-teal-700"
+                  className="form-checkbox lg:h-5 lg:w-5 text-teal-700"
                 />
                 <span className="text-[17px]">
                   Book a home euthanasia for your pet
@@ -368,9 +368,9 @@ export default function Journey({ customLabels }: FormsectionProps) {
                   type="checkbox"
                   checked={showForm}
                   onChange={(e) => handleCheckboxChange(e, 2)}
-                  className="form-checkbox h-5 w-5 text-teal-700"
+                  className="form-checkbox lg:h-5 lg:w-5 text-teal-700"
                 />
-                <span className="text-[17px] leading-6">
+                <span className="text-[17px] ">
                   Organise a callback from one of our team to discuss your pet's
                   quality of life
                 </span>

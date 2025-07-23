@@ -157,7 +157,7 @@ const vetdata = [
 const page = () => {
   return (
     <div>
-      <Navbarhome />
+      <Navbarhome country='au'/>
       <div className="bg-[#E5F2F2]">
         <div className="container mx-auto lg:pt-67 pt-35 p-3  lg:pb-30 pb-10  ">
           <h1 className="text-[40px] lg:text-[72px] font-serif text-primary">

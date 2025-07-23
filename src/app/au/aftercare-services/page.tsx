@@ -1,18 +1,25 @@
-import Footer from '@/components/Footer';
 import Navbarhome from '@/components/au/Homes/Navbarhome';
 import Image from 'next/image';
 import React from 'react';
+const statesData = [
+  { state: 'ACT', website: 'Edenhills website', link: 'https://edenhills.com.au' },
+  { state: 'NSW', website: 'Patch and Purr website', link: 'https://patchandpurr.com.au' },
+  { state: 'SA', website: 'Edenhills website', link: 'https://edenhills.com.au' },
+  { state: 'QLD', website: 'Pet in Peace website', link: 'https://www.petsinpeace.com.au/' },
+  { state: 'VIC', website: 'Edenhills website', link: 'https://edenhills.com.au' },
+  { state: 'WA', website: 'Lawnswood website', link: 'https://lawnswood.com.au' },
+];
 
 function page() {
   return (
     <div >
-      <Navbarhome />
+      <Navbarhome country='au'/>
               <div className='bg-[#E5F2F2]'>
             <div className='container mx-auto lg:pt-67 pt-35 p-3  lg:pb-30 pb-10 '>
                 <h1 className='text-[40px] lg:text-[72px] font-serif text-primary'>Aftercare Services</h1>
             </div>
         </div>
-        <div className='bg-[#FEFBF8]'>
+        <div className='bg-[##E5F2F2]'>
             <div className='lg:pt-20 pt-5 '>
     <div className="container mx-auto px-4 md:px-7 py-6">
       <article className="xl:pl-6 lg:pb-20 pb-5">
@@ -38,23 +45,42 @@ function page() {
           *Unlike some other cremation companies, our crematorium partners cremate all pets booked for private cremation in their own private chamber, not individually by sectioning off with refractory bricks. This guarantees that only your pet’s ashes are returned to you.
         </p>
       </article>
-
-
-
     </div>
 
+<div className='container mx-auto lg:pb-20 pb-10'>
+  <div>
+<div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-6 p-2 ">
+      {statesData.map(({ state, website, link }) => (
+        <div
+          key={state}
+          className="bg-[#E5F2F2] p-15 pb-35 rounded"
+        >
+          <h3 className="text-[20px] lg:text-[25px] font-serif text-gray-800 mb-7">{state}</h3>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary text-[14px] lg:text-[17px] font-sans hover:text-teal-900 hover:underline hover:underline-offset-4"
+          >
+            {website}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
             {/* cards */}
         <div className="relative w-full h-full z-10 pb-26">
           <Image
             src={'/images/decor1.svg'}
             alt="decor"
-            height={550}
-            width={655}
-            className="absolute top-0 -z-1"
+            height={700}
+            width={700}
+            className="absolute top-0 -z-1 md:h-50 md:w-50 lg:h-160 lg:w-160"
           />
-          <div className="container mx-auto   lg:pb-15 pb-0 z-20">
-            <div className="flex flex-col md:flex-row gap-7 max-w-8xl mx-auto lg:py-10 py-0">
+          <div className="container mx-auto lg:pb-15 pb-0 z-20">
+            <div className="flex flex-col md:flex-row gap-7 max-w-8xl mx-auto lg:py-10 py-0 p-2">
               {/* Card 1 */}
               <div className="flex-1  bg-cream xl:p-8 p-2 rounded ">
                 <div className="flex flex-col md:flex-row items-start gap-4">
@@ -99,7 +125,6 @@ function page() {
             </div>
         </div>
 
-      <Footer />
     </div>
   );
 }

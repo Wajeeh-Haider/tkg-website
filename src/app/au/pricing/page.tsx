@@ -14,12 +14,12 @@ const page = () => {
           </h1>
         </div>
       </div>
-      <div className="bg-[#FEFBF8]">
+      <div className="bg-[##E5F2F2]">
         <div className="container mx-auto lg:pt-20 pt-10  lg:pb-15 pb-5">
           <h1 className="lg:text-[43px] text-[25.12px] font-serif text-black p-3">
             How much does a home euthanasia cost?
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-2">
             {/* Monday to Friday */}
             <div className="bg-[#E5F2F2] p-10 pt-15 pb-15 ">
               <h3 className="text-[25.12px] lg:text-[43.1px] font-serif text-primary mb-3">
@@ -110,7 +110,7 @@ const page = () => {
             className="absolute top-0 -z-1"
           />
           <div className="container mx-auto   lg:pb-15 pb-5 z-20">
-            <div className="flex flex-col md:flex-row gap-7 max-w-8xl mx-auto py-10">
+            <div className="flex flex-col md:flex-row gap-7 max-w-8xl mx-auto py-10 p-2">
               {/* Card 1 */}
               <div className="flex-1  bg-cream xl:p-8 p-2 rounded ">
                 <div className="flex flex-col md:flex-row items-start gap-4">

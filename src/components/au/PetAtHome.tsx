@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React from 'react'
 import Image from 'next/image';
 import { MdOutlinePets } from "react-icons/md";
@@ -14,7 +15,12 @@ const PetAtHome = () => {
           <div>
             <h1 className='xl:text-7xl lg:text-[56px] text-[40px] text-primary font-serif'>Pet <br/>Euthanasia At <br/>Home</h1>
             <p className='font-sans text-gray-400 mt-10 mb-10 text-[14px] xl:text-[17px] leading-[1.8]'>The Kindest Goodbye is a network of dedicated and<br/> experienced vets providing caring in-home pet<br/> euthanasia services across Australia.</p>
-            <button className="inline-flex justify-center items-center text-white text-sm uppercase font-bold leading-[1.5] px-6 py-3 border-2 border-primary bg-primary rounded text-center no-underline cursor-pointer transition duration-300 ease-in-out hover:bg-teal-600 hover:border-teal-600">Read More</button>
+            <Link
+  href="/au/about-us"
+  className="inline-flex justify-center items-center text-white text-sm uppercase font-bold leading-[1.5] px-6 py-3 border-2 border-primary bg-primary rounded text-center no-underline cursor-pointer transition duration-300 ease-in-out hover:bg-teal-600 hover:border-teal-600"
+>
+  Read More
+</Link>
           </div>
           <div>
             <img src="/images/Pet-Euthanasia-At-Home.jpg" alt="Pet at Home" className='xl:w-[520px] xl:h-[400px] md:w-[520px] md:h-[400px] w-100 h-60'/>

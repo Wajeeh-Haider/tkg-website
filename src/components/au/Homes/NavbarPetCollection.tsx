@@ -43,7 +43,7 @@ const navLinks = {
   ],
 };
 
-export default function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
+export default function NavbarPetCollection({ country = 'uk' }: { country?: 'au' | 'uk' }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -133,7 +133,7 @@ export default function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }
               ${
                 isScrolled
                   ? 'brightness-100 grayscale-0 invert-0'
-                  : 'brightness-100 grayscale-0 invert-0'
+                  : 'brightness-[10%] grayscale invert opacity-90'
               }
             `}
           />
@@ -152,7 +152,7 @@ export default function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }
                   <>
                     <button
                       className={`relative flex items-center gap-1 transition-all duration-300 ${
-                        isScrolled ? 'text-gray-800' : 'text-gray-800'
+                        isScrolled ? 'text-gray-800' : 'text-white'
                       } group-hover:text-primary cursor-pointer 
               after:content-[''] after:absolute after:left-0 after:bottom-[-62px] 
               after:h-[2px] after:w-full after:bg-primary 
@@ -162,7 +162,7 @@ export default function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }
                       {item.title}
                       <ChevronDownIcon
                         className={`w-4 h-4 transition-colors duration-300 ${
-                          isScrolled ? 'text-gray-800' : 'text-gray-800'
+                          isScrolled ? 'text-gray-800' : 'text-white'
                         } group-hover:text-primary`}
                       />
                     </button>
@@ -185,7 +185,7 @@ export default function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }
                     className={`relative block transition-all duration-300 ${
                       isScrolled
                         ? 'text-gray-800 after:bottom-[-37px]'
-                        : 'text-gray-800 after:bottom-[-62px]'
+                        : 'text-white after:bottom-[-62px]'
                     } hover:text-primary 
             after:content-[''] after:absolute after:left-0  
             after:h-[2px] after:w-full after:bg-primary 

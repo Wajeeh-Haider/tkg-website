@@ -7,6 +7,7 @@ const steps = [
     description:
       "Simply click on the ‘Make a Booking’ button in the site menu and follow the prompts, entering a few details to allow us to prepare for our visit.",
     cta: "BOOK NOW",
+    href: "#",
     number: "1",
   },
   {
@@ -14,6 +15,7 @@ const steps = [
     description:
       "One of our dedicated vets will visit you to peacefully perform your pet euthanasia at home. Everything is done to ensure your pet's end-of-life journey is gentle and stress-free as possible.",
     cta: "READ MORE",
+    href: "#",
     number: "2",
   },
   {
@@ -21,6 +23,7 @@ const steps = [
     description:
       "We offer a wide range of after-care options through our crematorium partners. Or if you wish, we can leave your pet in your care to make your own arrangements.",
     cta: "READ MORE",
+    href: "/au/aftercare-services",
     number: "3",
   },
   {
@@ -28,6 +31,7 @@ const steps = [
     description:
       "If your pet has passed away at home, we can assist to collect them and transfer them to our cremation partners with dignity and care.",
     cta: "BOOK NOW",
+    href: "#",
     number: "4",
   },
 ];
@@ -54,7 +58,7 @@ const HowItWorks = () => {
                 {step.description}
               </p>
               <a
-                href="#"
+                href={step.href}
                 className="text-primary text-[14px] xl:text-[18px] font-semibold rounded cursor-pointer flex items-center group"
               >
                 {step.cta}
@@ -70,8 +74,8 @@ const HowItWorks = () => {
 
       <div className="text-center mt-12">
         <a
-          href="#"
-          className="inline-block px-7 py-4 text-[13px] lg:text-[16px] bg-white border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition"
+          href="/au/how-it-works"
+          className="inline-block px-7 py-4 text-[13px] lg:text-[16px] bg-[#FEFBF8] border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition"
         >
           LEARN MORE
         </a>

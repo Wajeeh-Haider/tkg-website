@@ -70,7 +70,7 @@ const Page = () => {
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block">
           <button
             onClick={scrollToSection}
-            className="group relative w-7 h-12 lg:w-8 lg:h-14 mb-5 lg:mb-0 border-2 lg:border-4 border-white rounded-full flex justify-center items-start transition-all duration-300 hover:scale-105"
+            className="group relative w-7 h-12 lg:w-8 lg:h-14 mb-5 lg:mb-0 border-2 lg:border-4 border-white rounded-full flex justify-center items-start transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             <span className="dot w-2 h-2 bg-white rounded-full mt-2 transition-all duration-500 group-hover:translate-y-6"></span>
           </button>
