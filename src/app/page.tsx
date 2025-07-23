@@ -224,7 +224,7 @@ export default function Home() {
         {/* Hero Header */}
         <div className="relative z-10 flex flex-col justify-center container mx-auto text-white px-0 lg:px-4 h-screen">
           <Image
-            src="/images/Google-Reviews.png"
+            src="/images/google-review.png"
             alt="Hero Image"
             width={110}
             height={55}
@@ -236,7 +236,7 @@ export default function Home() {
             of home
           </h1>
           <div className="flex gap-2 py-4 ml-6">
-            <Link href="/uk/booking-request">
+            <Link href="/uk">
               <Button
                 label="UK"
                 icon={<ChevronRightIcon className="w-5 h-5" />}

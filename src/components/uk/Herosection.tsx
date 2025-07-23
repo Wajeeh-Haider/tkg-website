@@ -20,7 +20,7 @@ function Herosection() {
     >
       <div className="relative z-10 flex flex-col justify-center container mx-auto text-white px-0 lg:px-4 h-screen">
         <Image
-          src="/images/Google-Reviews.png"
+          src="/images/google-review.png"
           alt="Hero Image"
           width={110}
           height={55}

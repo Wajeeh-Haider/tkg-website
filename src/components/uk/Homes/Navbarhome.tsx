@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const navLinks = [
-  { title: 'Home', href: '/uk' },
+  { title: 'Home', href: '/' },
   {
     title: 'Our Services',
     subLinks: [

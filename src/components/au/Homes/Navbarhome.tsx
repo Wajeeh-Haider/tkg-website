@@ -43,7 +43,11 @@ const navLinks = {
   ],
 };
 
-export default function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
+export default function Navbarhome({
+  country = 'uk',
+}: {
+  country?: 'au' | 'uk';
+}) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -115,7 +119,7 @@ export default function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }
 
         {/* Logo */}
         <Link
-          href="#"
+          href={`/${country}`}
           className="block cursor-pointer py-1.5 text-base font-semibold"
         >
           <Image
