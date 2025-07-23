@@ -32,19 +32,19 @@ const au = {
 const uk = {
   navigationLinks1: [
     { label: 'Request an appointment', href: '/request-appointment' },
-    { label: 'How It Works', href: '/works' },
-    { label: 'About Us', href: '/about-us' },
-    { label: 'Locations', href: '/locations' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'FAQs', href: '/faqs' },
+    { label: 'How It Works', href: '/uk/how-it-works' },
+    { label: 'About Us', href: '/uk/about-us' },
+    { label: 'Locations', href: '/uk/locations' },
+    { label: 'Pricing', href: '/uk/pricing' },
+    { label: 'FAQs', href: '/uk/faqs' },
   ],
   navigationLinks2: [
-    { label: 'Contact', href: '/contact' },
-    { label: 'Aftercare Services', href: '/services' },
+    { label: 'Contact', href: '/uk/contact' },
+    { label: 'Aftercare Services', href: '/uk/aftercare-services' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Terms of Service', href: '/terms-services' },
-    { label: 'Privacy Policy', href: '/privacy-policy' },
-    { label: 'Popular Searches', href: '/faqs' },
+    { label: 'Terms of Service', href: '/uk/terms-of-service' },
+    { label: 'Privacy Policy', href: '/uk/privacy-policy' },
+    { label: 'Popular Searches', href: '' },
   ],
 };
 
