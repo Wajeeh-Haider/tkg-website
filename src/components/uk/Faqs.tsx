@@ -38,6 +38,9 @@ const faqData = [
       <li>Euthanasia is a peaceful, gentle and beautiful process to prevent suffering.</li>
       <li>The Quality of Life Scale may help assess your pet’s situation.</li>
     </ul>
+      <a href='/uk/quality-of-life' class='inline-block px-7 py-4 mt-6 bg-primary text-white font-sans font-bold rounded border-2 border-primary hover:bg-[#20B1B7] hover:border-teal-700 transition duration-300'>
+    QUALITY OF LIFE SCALE FOR PETS
+  </a>
     `,
   },
   {
@@ -97,7 +100,7 @@ function Faqs() {
                       type="button"
                       onClick={() => toggle(index)}
                       className={`flex items-center justify-between w-full px-4 py-5 sm:p-6 cursor-pointer transition-colors ${
-                        isOpen ? 'bg-[#E5F2F2]' : 'bg-[#E5F2F2]'
+                        isOpen ? 'bg-[#E5F2F2]' : 'bg-[#E8EFF4]'
                       }`}
                     >
                       <span
@@ -126,7 +129,11 @@ function Faqs() {
                       </svg>
                     </button>
                     {isOpen && (
-                      <div className="px-4 pb-5 sm:px-6 sm:pb-6">
+                      <div
+                        className={`overflow-hidden px-4 pb-5 sm:px-6 sm:pb-6 ${
+                          isOpen ? 'bg-[#E5F2F2]' : ''
+                        }`}
+                      >
                         <div
                           className="faq-content text-[14px] text-[#404040] font-sans"
                           dangerouslySetInnerHTML={{ __html: item.answer }}

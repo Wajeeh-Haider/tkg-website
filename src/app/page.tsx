@@ -223,6 +223,7 @@ export default function Home() {
 
         {/* Hero Header */}
         <div className="relative z-10 flex flex-col justify-center container mx-auto text-white px-0 lg:px-4 h-screen">
+<<<<<<< HEAD
           <div className="xl:pb-30">
             <Image
               src="/images/Google-Reviews.png"
@@ -252,6 +253,35 @@ export default function Home() {
                 />
               </Link>
             </div>
+=======
+          <Image
+            src="/images/google-review.png"
+            alt="Hero Image"
+            width={110}
+            height={55}
+            className="ml-6 overflow-hidden"
+          />
+          <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-semibold md:w-[60%] lg:w-[66%] xl:w-[62%] leading-[1.1] mx-6 my-4 pt-2">
+            Peaceful euthanasia for
+            <span className="text-primary"> beloved pets </span>in the comfort
+            of home
+          </h1>
+          <div className="flex gap-2 py-4 ml-6">
+            <Link href="/uk">
+              <Button
+                label="UK"
+                icon={<ChevronRightIcon className="w-5 h-5" />}
+                className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+              />
+            </Link>
+            <Link href="/au">
+              <Button
+                label="Australia"
+                icon={<ChevronRightIcon className="w-5 h-5" />}
+                className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+              />
+            </Link>
+>>>>>>> 96d8ceefdf4aaa4ec7c2fa4be2fd89d8e520c6a0
           </div>
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block">
             <button
