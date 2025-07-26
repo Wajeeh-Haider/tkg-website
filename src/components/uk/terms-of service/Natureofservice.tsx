@@ -39,17 +39,17 @@ const content: Section[] = [
 
 const Natureofservice = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 pb-14 text-gray-800 space-y-12">
+    <div className="container mx-auto px-4 xl:px-40  lg:px-8 pb-14 text-gray-800 space-y-12">
       {content.map((section, idx) => (
         <section key={idx}>
-          <h2 className="text-[27.68px] md:text-[38.72px] text-[#404040] font-serif  mb-4">
+          <h2 className="text-[27.68px] md:text-[38.72px] xl:text-[57px] text-[#404040] font-serif  mb-4">
             {section.title}
           </h2>
 
           {section.paragraphs.map((para, i) => (
             <p
               key={i}
-              className="text-sm md:text-[15.75px] xl:text-[18px] text-[#404040] font-sans leading-8 my-5"
+              className="text-sm md:text-[15.75px] xl:text-[19px] text-[#404040] font-sans leading-8 my-5"
             >
               {para}
             </p>

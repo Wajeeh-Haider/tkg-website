@@ -6,7 +6,7 @@ const introText = `<b> Dr Tom Milton’s veterinary journey</b>has taken him fro
 
 const doctorInfo = {
   image: {
-    src: '/images/Drtom.jpg',
+    src: '/images/drtom.jpg',
     alt: 'Dr Tom Milton',
     width: 352,
     height: 282,
@@ -67,7 +67,7 @@ function Drtom() {
           </div>
 
           {/* Cards */}
-          <div className="bg-[#F6F0EA] space-y-8 p-5 relative md:top-20 lg:top-50 xl:top-40 md:right-5 h-[480px] md:w-[55%] lg:w-[70%] xl:w-[80%]">
+          <div className="bg-[#F6F0EA] space-y-8 px-7 py-9 relative md:top-20 lg:top-50 xl:top-40 md:right-5 h-[480px] md:w-[58%] lg:w-[76%] xl:w-[50%]">
             {cards.map((card, index) => (
               <div key={index}>
                 <div className="flex items-center gap-4">

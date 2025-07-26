@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const Petathome = () => {
   return (
-    <div className="relative bg-[#FEFBF8] mx-6 xl:mx-0 overflow-hidden py-16">
+    <div className="relative bg-[#FEFBF8] mx-4 md:mx-6 xl:mx-0 overflow-hidden py-16">
       <div className="absolute left-0 bottom-0 w-[500px] h-[400px] pointer-events-none z-0">
         <Image
           src="/images/decor1.svg"
@@ -20,7 +20,7 @@ const Petathome = () => {
       {/* Main Content  */}
       <div className="relative z-10 container mx-auto xl:grid lg:grid-cols-2 xl:grid-cols-3 items-start">
         <div className="w-full md:w-[65%] xl:w-[100%] xl:pr-1">
-          <h2 className="text-[27.5px] md:text-[38.5px] text-[#306060] font-serif">
+          <h2 className="text-[27.5px] md:text-[38.5px] xl:text-[57.76px] font-semibold text-[#306060] font-serif">
             Pet Euthanasia At Home
           </h2>
           <p className="font-sans text-[#404040] my-6 pr-[3.5px] text-sm xl:text-[16px] leading-[1.8]">
@@ -51,7 +51,7 @@ const Petathome = () => {
           </div>
 
           {/* Column 3 */}
-          <div className="bg-[#F6F0EA] space-y-8 p-5 relative md:top-16 xl:top-8 md:right-5 md:w-[55%] lg:w-[60%] xl:w-[80%]">
+          <div className="bg-[#F6F0EA] space-y-8 px-7 py-9 relative md:top-16 xl:top-8 md:right-5 md:w-[58%] lg:w-[60%] xl:w-[57%]">
             {/* Card 1 */}
             <div>
               <div className="flex items-center gap-4">
@@ -62,9 +62,12 @@ const Petathome = () => {
               </div>
               <p className="text-[14px] xl:text-[16px] pt-4 ml-10 font-sans leading-[2] text-[#404040]">
                 Whether it’s
-                <span className="text-primary"> putting a dog down</span> or
-                saying farewell to the family cat, saying goodbye in the comfort
-                of home is the kindest farewell. Our{' '}
+                <Link href="/uk/services/pet-euthanasia/putting-a-dog-down">
+                  <span className="text-primary"> putting a dog down</span>
+                </Link>{' '}
+                or saying farewell to the family cat, saying goodbye in the
+                comfort of home, surrounded by loved ones is the kindest
+                farewell you can give your beloved friend. Our{' '}
                 <strong>in-home pet euthanasia</strong> services allow your pet
                 to remain in familiar surroundings, reducing anxiety and
                 creating a peaceful goodbye.

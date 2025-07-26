@@ -225,7 +225,10 @@ function PrivacySection() {
       <p className="pb-5 text-sm md:text-[15.75px] xl:text-[18px] font-sans text-[#404040]">
         Tom Milton
       </p>
-      <Link href="mailto:tom.milton@thekindestgoodbye.co.uk">
+      <Link
+        href="mailto:tom.milton@thekindestgoodbye.co.uk"
+        className="text-sm md:text-[15.75px] xl:text-[18px] font-sans text-[#404040]"
+      >
         tom.milton@thekindestgoodbye.co.uk
       </Link>
     </div>

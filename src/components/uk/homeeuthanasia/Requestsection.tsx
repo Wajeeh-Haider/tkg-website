@@ -28,9 +28,10 @@ const WorkData = [
 
 function Requestsection() {
   return (
-    <div className="container mx-auto space-y-20">
+    <div className="container mx-auto px-6 space-y-20">
       {WorkData.map((step) => {
         const isEven = parseInt(step.number) % 2 === 0;
+        const isFirstImage = step.Image === '/images/howitwork1.jpg';
 
         return (
           <div
@@ -39,11 +40,9 @@ function Requestsection() {
           >
             {/* Text Content */}
             <div
-              className={`
-          relative pl-2 
-          order-1 
-          ${isEven ? 'md:order-2' : 'md:order-1'}
-        `}
+              className={`relative pl-2 order-1 ${
+                isEven ? 'md:order-2' : 'md:order-1'
+              }`}
             >
               {/* Background Number */}
               <span className="absolute text-[190px] md:text-[200px] font-serif text-[#f0ede9] top-0 -left-4 z-0 select-none leading-none -translate-y-10 pointer-events-none">
@@ -64,20 +63,26 @@ function Requestsection() {
             {/* Image */}
             <div
               className={`
-    w-full h-full 
-    order-2 
-    ${isEven ? 'md:order-1' : 'md:order-2'}
-    flex justify-center items-center lg:justify-start lg:items-start
-  `}
+                w-full h-full 
+                order-2 
+                ${isEven ? 'md:order-1' : 'md:order-2'}
+                relative flex justify-center items-center lg:justify-start lg:items-start
+              `}
             >
-              <Image
-                src={step.Image}
-                alt={step.title}
-                className="w-full h-auto object-cover"
-                layout="responsive"
-                width={677}
-                height={500}
-              />
+              <div
+                className={`relative w-full max-w-[677px] ${
+                  isFirstImage ? 'top-0 md:-top-80 lg:-top-20' : ''
+                }`}
+              >
+                <Image
+                  src={step.Image}
+                  alt={step.title}
+                  className="w-full h-auto object-cover"
+                  layout="responsive"
+                  width={677}
+                  height={500}
+                />
+              </div>
             </div>
           </div>
         );

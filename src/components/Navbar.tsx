@@ -7,7 +7,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const navLinks = {
   uk: [
-    { title: 'Home', href: '/' },
+    { title: 'Home', href: '/uk' },
     {
       title: 'Our Services',
       subLinks: [
@@ -142,7 +142,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         {/* Desktop Nav */}
         <div className="hidden xl:flex flex-1 justify-center">
           <ul
-            className={`flex items-center gap-6 text-sm font-semibold font-sans transition-colors duration-300 ${
+            className={`flex items-center gap-6 text-sm xl:text-base font-semibold font-sans transition-colors duration-300 ${
               isScrolled ? 'text-gray-800' : 'text-white'
             }`}
           >
@@ -163,15 +163,15 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                       <ChevronDownIcon
                         className={`w-4 h-4 transition-colors duration-300 ${
                           isScrolled ? 'text-gray-800' : 'text-white'
-                        } group-hover:text-primary`}
+                        } group-hover:text-primary `}
                       />
                     </button>
-                    <ul className="absolute right-0 mt-2 bg-primary shadow-md rounded-md w-48 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
+                    <ul className="absolute right-0 mt-2 bg-primary backdrop-blur-sm shadow-md rounded-md w-48 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
                       {item.subLinks.map((sub, i) => (
                         <li key={i}>
                           <Link
                             href={sub.href}
-                            className="block px-4 py-2 text-sm text-background hover:text-foreground"
+                            className="block px-4 py-2 text-sm text-white hover:text-white hover:bg-white/40"
                           >
                             {sub.label}
                           </Link>

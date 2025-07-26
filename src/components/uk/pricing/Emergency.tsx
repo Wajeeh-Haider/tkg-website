@@ -12,12 +12,12 @@ function Emergency() {
         <div className="pb-13">
           <b>Transfer of pets for cremation</b> starts from £70 per pet.
         </div>
-        <div className="pb-13 text-start">
+        <div className="pb-13 text-start mx-6">
           Please note that <b>additional travel fees</b> may be requested by
           vets in our network if they are required to travel significant
           distances for a visit.
         </div>
-        <div className="pb-13">
+        <div className="pb-13 mx-4">
           In the rare instance where <b>multiple pets</b> are being put to sleep
           together, additional pets are charged at £160 per additional pet. For
           bookings for multiple pets, please contact our customer care team on{' '}

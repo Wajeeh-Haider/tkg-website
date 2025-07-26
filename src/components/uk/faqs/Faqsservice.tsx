@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const faqData = [
   {
@@ -68,6 +69,20 @@ const faqData = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.08,
+      type: 'spring' as const,
+      stiffness: 60,
+      damping: 14,
+    },
+  }),
+};
+
 function Faqsservice() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggle = (index: number) => {
@@ -80,9 +95,14 @@ function Faqsservice() {
         {faqData.map((item, index) => {
           const isOpen = openIndex === index;
           return (
-            <div
+            <motion.div
               key={index}
-              className="transition-all duration-200 font-serif bg-[#E8EFF4] border border-gray-200"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              custom={index}
+              className="transition-all duration-200 font-serif bg-[#E8EFF4] border border-gray-200 rounded"
             >
               <button
                 type="button"
@@ -94,10 +114,13 @@ function Faqsservice() {
                 <span className="text-[20.5px] md:text-[22.5px] md:pr-6 lg:pr-0 text-start text-[#404040]">
                   {item.question}
                 </span>
-                <svg
+                <motion.svg
+                  initial={false}
+                  animate={{ rotate: isOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`w-6 h-6 transform transition-transform ${
-                    isOpen ? 'rotate-180 text-primary' : 'text-[#6591C0]'
+                  className={`w-6 h-6 ${
+                    isOpen ? 'text-primary' : 'text-[#6591C0]'
                   }`}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -109,20 +132,46 @@ function Faqsservice() {
                     strokeWidth="2"
                     d="M19 9l-7 7-7-7"
                   />
-                </svg>
+                </motion.svg>
               </button>
-              {isOpen && (
-                <div className="px-4 pb-5 sm:px-6 sm:pb-6">
-                  <div
-                    className="faq-content text-[14px] text-[#404040] font-sans"
-                    dangerouslySetInnerHTML={{ __html: item.answer }}
-                  />
-                </div>
-              )}
-            </div>
+
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: 'easeInOut',
+                    }}
+                    className={`overflow-hidden px-4 pb-5 sm:px-6 sm:pb-6 ${
+                      isOpen ? 'bg-[#E5F2F2]' : ''
+                    }`}
+                  >
+                    <div
+                      className="faq-content text-[14px] text-[#404040] font-sans"
+                      dangerouslySetInnerHTML={{ __html: item.answer }}
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           );
         })}
-        <p className="text-[#404040] pt-8 text-[17px] font-sans text-center leading-6 pb-12">
+
+        <motion.p
+          className="text-[#404040] pt-8 text-[17px] font-sans text-center leading-6 pb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.7,
+            ease: 'easeOut',
+            delay: faqData.length * 0.1,
+          }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           If you would like to speak to one of our vets in person about your
           end-of-life decision for your pet free-of-charge, please complete our{' '}
           <Link
@@ -132,7 +181,7 @@ function Faqsservice() {
             contact form
           </Link>{' '}
           and we will call you back ASAP.
-        </p>
+        </motion.p>
       </div>
     </div>
   );

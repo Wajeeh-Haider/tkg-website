@@ -26,10 +26,10 @@ function Herosection() {
           height={55}
           className="ml-6 overflow-hidden"
         />
-        <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-semibold leading-tight w-[80%] md:w-[65%] lg:w-[70%]  mx-6 my-4 pt-2">
-          Peaceful Pet Euthanasia for
-          <span className="text-primary"> beloved pets</span>
-          &nbsp;in the <br /> comfort of home
+        <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-bold md:w-[60%] lg:w-[66%] xl:w-[55%] leading-[1.1] mx-6 my-4 pt-2">
+          Peaceful euthanasia for
+          <span className="text-primary"> beloved pets </span>in the comfort of
+          home
         </h1>
 
         {/* Buttons */}

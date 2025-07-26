@@ -25,7 +25,7 @@ const Input: React.FC<InputFieldProps> = ({
     <div className="w-full">
       <label
         htmlFor={name}
-        className={`block mb-1 font-sans text-[#404040] text-sm lg:text-[16px] ${
+        className={`block mb-1 font-sans text-[#404040] text-sm font-medium lg:text-[16px] ${
           error ? 'text-[#f44336]' : 'text-[#404040]'
         }`}
       >

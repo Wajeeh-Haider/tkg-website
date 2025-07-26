@@ -22,6 +22,7 @@ const options = [
 
 function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
   const [open, setOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -59,11 +60,18 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
-    console.log('Form submitted:', formData);
+
+    setIsSubmitting(true);
+
+    // Simulate form submission delay
+    setTimeout(() => {
+      console.log('Form submitted:', formData);
+      setIsSubmitting(false);
+    }, 2000);
   };
 
   return (
-    <div className="max-w-8xl mx-auto relative z-10 overflow-hidden min-h-screen gap-8 flex flex-col md:flex-row items-start justify-center p-4 xl:ml-12">
+    <div className=" mx-auto xl:pl-46 pb-10 relative z-10 overflow-hidden min-h-screen gap-8 flex flex-col md:flex-row items-start justify-center p-4 xl:ml-12">
       <div className="absolute right-0 bottom-50 w-[300px] h-[300px] pointer-events-none">
         <Image
           src="/images/decor5.svg"
@@ -74,13 +82,14 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
         />
       </div>
 
-      <div className="w-full md:w-1/2 max-w-xl xl:px-3">
-        <h3 className="text-[20.5px] md:text-[22.5px] font-serif text-[#404040]">
+      <div className="w-full ">
+        <h3 className="text-[20.5px] md:text-[22.5px] xl:text-[24px] font-serif text-[#404040]">
           Phone{' '}
           <Link href="tel:03302366999" className="hover:underline">
             0330 2366 999
           </Link>
         </h3>
+
         {/* Social Links */}
         <div className="flex gap-4 px-6 mt-6">
           <a
@@ -104,11 +113,13 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
             </svg>
           </a>
         </div>
+
         <div className="w-full h-[1px] bg-gray-300 my-7" />
-        <h2 className="text-[20.5px] md:text-[26.5px] font-serif text-[#404040] mb-6">
+
+        <h2 className="text-[20.5px] md:text-[26.5px] xl:text-[32px] font-serif text-[#404040] mb-6">
           Contact Form
         </h2>
-        <p className="mb-6 text-sm xl:text-base font-sans text-[#404040]">
+        <p className="mb-6 text-sm xl:text-[17px] font-sans text-[#404040]">
           If you would like to speak to us about your pet’s quality of life or
           have any other questions about our service, please complete the
           contact form below and one of our vets will call you back ASAP.
@@ -147,9 +158,10 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
             />
           </div>
 
+          {/* Dropdown */}
           <div className="relative w-full">
             <label
-              className={`block mb-1 font-sans text-[#404040] text-sm lg:text-[16px] ${
+              className={`block mb-1 font-sans text-[#404040] text-sm font-medium  lg:text-[16px] ${
                 formErrors.contactMethod ? 'text-[#f44336]' : 'text-gray-700'
               }`}
             >
@@ -215,9 +227,10 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
             )}
           </div>
 
+          {/* Message */}
           <div>
             <label
-              className={`block mb-1 font-sans text-[#404040] text-sm lg:text-[16px] ${
+              className={`block mb-1 font-sans text-[#404040] text-sm font-medium  lg:text-[16px] ${
                 formErrors.message ? 'text-[#f44336]' : 'text-gray-700'
               }`}
             >
@@ -240,16 +253,45 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
               </p>
             )}
           </div>
-          <div>
+
+          {/* Submit + Loader */}
+          <div className="relative flex items-center">
             <Button
               label="SUBMIT"
-              className="hover:gap-2 hover:opacity-80 text-[13px] bg-[#0e797d] text-white lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+              className={`flex items-center gap-2 text-[13px] bg-[#0e797d] text-white lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3 ${
+                isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
             />
+            {isSubmitting && (
+              <div className="absolute right-70 md:right-60 lg:right-88 xl:right-105">
+                <svg
+                  className="animate-spin h-5 w-5 text-[#0e797d]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                  ></path>
+                </svg>
+              </div>
+            )}
           </div>
         </form>
       </div>
 
-      <div className="w-full md:w-1/2 flex px-8 mt-10 md:mt-0 mb-12 z-[99999]">
+      {/* Right-side Image */}
+      <div className="w-full flex px-5 mt-10 md:mt-0 mb-12 z-[99999]">
         <Image
           src="/images/dog2.jpg"
           alt="Form illustration"

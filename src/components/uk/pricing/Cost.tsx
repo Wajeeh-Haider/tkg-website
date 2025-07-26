@@ -81,7 +81,7 @@ function PricingSection({
   buttonClassName: string;
 }) {
   return (
-    <div className={`${bgColor} px-10 py-12 space-y-4`}>
+    <div className={`${bgColor} px-8 py-12 space-y-4 w-full`}>
       <h4 className={`text-[25px] md:text-[32px] font-serif ${textColor}`}>
         {title}
       </h4>
@@ -90,7 +90,7 @@ function PricingSection({
         {notes.map((note, index) => (
           <div key={index} className="flex items-start gap-2 text-sm">
             <div className={textColor}>{note.icon}</div>
-            <p className={`text-sm lg:text-[17px] pb-2 font-sans ${textColor}`}>
+            <p className={`text-sm xl:text-[17px] pb-2 font-sans ${textColor}`}>
               {note.text}
             </p>
           </div>
@@ -119,7 +119,7 @@ function PricingSection({
 
 export default function Cost() {
   return (
-    <div className="max-w-6xl mx-auto px-4 md:px-6 pb-10">
+    <div className="container mx-auto px-4 md:px-16 pb-10">
       <h3 className="text-[25px] md:text-[32px] font-serif text-[#404040] mb-6">
         How much does a home euthanasia cost?
       </h3>
