@@ -1,49 +1,49 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const navLinks = {
   uk: [
-    { title: 'Home', href: '/uk' },
+    { title: "Home", href: "/uk" },
     {
-      title: 'Our Services',
+      title: "Our Services",
       subLinks: [
-        { label: 'Home Euthanasia', href: '/uk/how-it-works' },
-        { label: 'Cremation / Aftercare', href: '/uk/aftercare-services' },
+        { label: "Home Euthanasia", href: "/uk/how-it-works" },
+        { label: "Cremation / Aftercare", href: "/uk/aftercare-services" },
       ],
     },
-    { title: 'About Us', href: '/uk/about-us' },
-    { title: 'Pricing', href: '/uk/pricing' },
-    { title: 'Locations', href: '/uk/locations' },
-    { title: 'FAQs', href: '/uk/faqs' },
-    { title: 'Quality of Life Scale', href: '/uk/quality-of-life' },
-    { title: 'Contact', href: '/uk/contact' },
-    { title: 'Call Us - 0330 2366 999', href: '/uk/call-us' },
+    { title: "About Us", href: "/uk/about-us" },
+    { title: "Pricing", href: "/uk/pricing" },
+    { title: "Locations", href: "/uk/locations" },
+    { title: "FAQs", href: "/uk/faqs" },
+    { title: "Quality of Life Scale", href: "/uk/quality-of-life" },
+    { title: "Contact", href: "/uk/contact" },
+    { title: "Call Us - 0330 2366 999", href: "/uk/call-us" },
   ],
   au: [
-    { title: 'Home', href: '/au' },
+    { title: "Home", href: "/au" },
     {
-      title: 'Our Services',
+      title: "Our Services",
       subLinks: [
-        { label: 'Home Euthanasia', href: '/au/how-it-works' },
-        { label: 'Pet Collection', href: '/au/how-it-works-pet-collection' },
-        { label: 'Cremation / Aftercare', href: '/au/aftercare-services' },
+        { label: "Home Euthanasia", href: "/au/how-it-works" },
+        { label: "Pet Collection", href: "/au/how-it-works-pet-collection" },
+        { label: "Cremation / Aftercare", href: "/au/aftercare-services" },
       ],
     },
-    { title: 'About Us', href: '/au/about-us' },
-    { title: 'Pricing', href: '/au/pricing' },
-    { title: 'Locations', href: '/au/locations' },
-    { title: 'FAQs', href: '/au/faqs' },
-    { title: 'Quality of Life Scale', href: '/au/quality-of-life' },
-    { title: 'Contact', href: '/au/contact' },
-    { title: 'Call Us - 1300 799 452', href: '/call-us' },
+    { title: "About Us", href: "/au/about-us" },
+    { title: "Pricing", href: "/au/pricing" },
+    { title: "Locations", href: "/au/locations" },
+    { title: "FAQs", href: "/au/faqs" },
+    { title: "Quality of Life Scale", href: "/au/quality-of-life" },
+    { title: "Contact", href: "/au/contact" },
+    { title: "Call Us - 1300 799 452", href: "/call-us" },
   ],
 };
 
-export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
+export default function Navbar({ country = "uk" }: { country?: "au" | "uk" }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -56,8 +56,8 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const links = navLinks[country] || navLinks.uk;
 
@@ -65,8 +65,8 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out border-b ${
         isScrolled
-          ? 'bg-white text-black py-0 border-gray-300 '
-          : 'bg-transparent bg-opacity-10 text-white border-white'
+          ? "bg-white text-black py-0 border-gray-300 "
+          : "bg-transparent bg-opacity-10 text-white border-white"
       }`}
     >
       <div className="container-fluid px-4 md:px-8 flex flex-wrap items-center justify-between relative">
@@ -97,7 +97,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`w-6 h-6 ${
-                isScrolled ? 'text-black' : 'text-white'
+                isScrolled ? "text-black" : "text-white"
               } xl:text-inherit`}
               fill="none"
               viewBox="0 0 24 24"
@@ -127,13 +127,13 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
               transition-all duration-300 ease-in-out
               ${
                 isScrolled
-                  ? 'w-[68px] lg:w-[98px] xl:w-[98px]'
-                  : 'w-[68px] lg:w-[98px] xl:w-[160px]'
+                  ? "w-[68px] lg:w-[98px] xl:w-[98px]"
+                  : "w-[68px] lg:w-[98px] xl:w-[160px]"
               }
               ${
                 isScrolled
-                  ? 'brightness-100 grayscale-0 invert-0'
-                  : 'brightness-[10%] grayscale invert opacity-90'
+                  ? "brightness-100 grayscale-0 invert-0"
+                  : "brightness-[10%] grayscale invert opacity-90"
               }
             `}
           />
@@ -152,7 +152,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                   <>
                     <button
                       className={`relative flex items-center gap-1 transition-all duration-300 ${
-                        isScrolled ? 'text-gray-800' : 'text-white'
+                        isScrolled ? "text-gray-800" : "text-white"
                       } group-hover:text-primary cursor-pointer 
               after:content-[''] after:absolute after:left-0 after:bottom-[-62px] 
               after:h-[2px] after:w-full after:bg-primary 
@@ -162,7 +162,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                       {item.title}
                       <ChevronDownIcon
                         className={`w-4 h-4 transition-colors duration-300 ${
-                          isScrolled ? 'text-gray-800' : 'text-white'
+                          isScrolled ? "text-gray-800" : "text-white"
                         } group-hover:text-primary `}
                       />
                     </button>
@@ -181,11 +181,11 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                   </>
                 ) : (
                   <Link
-                    href={item.href || '#'}
+                    href={item.href || "#"}
                     className={`relative block transition-all duration-300 ${
                       isScrolled
-                        ? 'text-gray-800 after:bottom-[-37px]'
-                        : 'text-white after:bottom-[-62px]'
+                        ? "text-gray-800 after:bottom-[-37px]"
+                        : "text-white after:bottom-[-62px]"
                     } hover:text-primary 
             after:content-[''] after:absolute after:left-0  
             after:h-[2px] after:w-full after:bg-primary 
@@ -213,7 +213,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
       {/* Mobile Menu Panel */}
       <div
         className={`xl:hidden fixed top-0 left-[-2] h-screen w-[70%] max-w-xs bg-white shadow-md z-[9998] transform transition-transform duration-300 ease-in-out ${
-          menuOpen ? 'translate-x-0' : '-translate-x-full'
+          menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="p-4">
@@ -255,7 +255,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                         {item.title}
                         <div
                           className={`ml-2 w-8 h-8 rounded-full bg-white border border-foreground flex items-center justify-center transition-transform duration-300 ${
-                            openDropdown === index ? 'rotate-180' : ''
+                            openDropdown === index ? "rotate-180" : ""
                           }`}
                         >
                           <ChevronDownIcon className="w-6 h-6 text-primary" />
@@ -279,7 +279,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                     </div>
                   ) : (
                     <Link
-                      href={item.href || '#'}
+                      href={item.href || "#"}
                       className="block text-[17.5px] font-sans text-[#404040]"
                       onClick={() => setMenuOpen(false)}
                     >

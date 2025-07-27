@@ -1,65 +1,82 @@
-'use client';
-import Navbarhome from '@/components/au/Homes/Navbarhome';
-import React from 'react';
+"use client";
+import Navbarhome from "@/components/uk/Homes/Navbarhome";
+import React from "react";
+import * as framerMotion from "framer-motion";
+const motion = framerMotion.motion;
+
 const data = [
   {
-    name: 'VIC',
+    name: "VIC",
     areas: [
-      'Greater Melbourne',
-      'Mornington Peninsula',
-      'Geelong and surrounding areas',
-      'Ballarat and surrounding areas',
-      'Colac and surrounding areas',
+      "Greater Melbourne",
+      "Mornington Peninsula",
+      "Geelong and surrounding areas",
+      "Ballarat and surrounding areas",
+      "Colac and surrounding areas",
     ],
   },
   {
-    name: 'NSW',
+    name: "NSW",
     areas: [
-      'Greater Sydney',
-      'Southern Highlands and Wollongong',
-      'Central Coast',
-      'Newcastle & Hunter Valley',
+      "Greater Sydney",
+      "Southern Highlands and Wollongong",
+      "Central Coast",
+      "Newcastle & Hunter Valley",
     ],
   },
   {
-    name: 'QLD',
-    areas: ['Greater Brisbane', 'Gold Coast', 'Sunshine Coast'],
+    name: "QLD",
+    areas: ["Greater Brisbane", "Gold Coast", "Sunshine Coast"],
   },
   {
-    name: 'SA',
-    areas: ['Greater Adelaide', 'Fleurieu Peninsula'],
+    name: "SA",
+    areas: ["Greater Adelaide", "Fleurieu Peninsula"],
   },
   {
-    name: 'WA',
-    areas: ['Greater metropolitan Perth & surrounding areas'],
+    name: "WA",
+    areas: ["Greater metropolitan Perth & surrounding areas"],
   },
   {
-    name: 'ACT',
-    areas: ['Canberra and surrounding areas of NSW'],
+    name: "ACT",
+    areas: ["Canberra and surrounding areas of NSW"],
   },
   {
-    name: 'TAS',
-    areas: ['Hobart and surrounding areas'],
+    name: "TAS",
+    areas: ["Hobart and surrounding areas"],
   },
 ];
+
 const page = () => {
   return (
     <div>
       <Navbarhome country="au" />
+
       <div className="bg-[#E5F2F2]">
         <div className="container mx-auto lg:pt-67 pt-35 p-3  lg:pb-30 pb-10 ">
-          <h1 className="text-[40px] lg:text-[72px] font-serif text-primary">
-            LOCATIONS
-          </h1>
+          <motion.h1
+            initial={{ color: "#d9d9d9" }}
+            animate={{ color: "#008080" }}
+            transition={{ duration: 1.2 }}
+            className="text-[40px] lg:text-[72px] font-serif text-primary"
+          >
+            Locations
+          </motion.h1>
         </div>
       </div>
+
       {/* Location data */}
       <div className="bg-[#FEFBF8]">
-        <div className="container mx-auto lg:pt-20 pt-10  lg:pb-15 pb-5 ">
-          <h1 className="lg:text-[33px] text-[23px] font-serif text-primary p-3">
+        <div className="container mx-auto lg:pt-20 pt-10 lg:pb-15 pb-5 ">
+          <motion.h1
+            initial={{ color: "#cfcfcf" }}
+            animate={{ color: "#008080" }}
+            transition={{ duration: 1.2, delay: 0.2 }}
+            className="lg:text-[32px] text-[23px] font-serif text-primary xl:p-0 p-3"
+          >
             Our wonderful network of vets can provide home euthanasia services
             to most of the Australian population, including the following areas:
-          </h1>
+          </motion.h1>
+
           <div className="bg-[#fdfaf6] lg:py-25 py-10">
             <div className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-gray-900 p-3">
               {data.map((state) => (
@@ -78,14 +95,20 @@ const page = () => {
                 </div>
               ))}
             </div>
-            <p className="text-gray-700 lg:mt-25 mt-10 font-sans text-[14px] lg:text-[17px] font-semibold p-3">
+
+            <motion.p
+              initial={{ color: "#d1d1d1" }}
+              animate={{ color: "#374151" }}
+              transition={{ duration: 1.2, delay: 0.4 }}
+              className="text-gray-700 lg:mt-25 mt-10 font-sans text-[14px] lg:text-[17px] font-semibold p-3"
+            >
               To see whether we currently have vets available to come to your
-              home,{' '}
+              home,{" "}
               <a href="#" className="text-primary hover:underline">
                 click here
-              </a>{' '}
+              </a>{" "}
               and enter your location.
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

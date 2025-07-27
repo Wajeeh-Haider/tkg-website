@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
-import { MdOutlineHealthAndSafety } from 'react-icons/md';
-import { LuClock5 } from 'react-icons/lu';
-import Navbarhome from '@/components/au/Homes/Navbarhome';
+import React from "react";
+import Image from "next/image";
+import { MdOutlineHealthAndSafety } from "react-icons/md";
+import { LuClock5 } from "react-icons/lu";
+import Navbarhome from "@/components/uk/Homes/Navbarhome";
 const page = () => {
   return (
     <div>
@@ -33,7 +33,7 @@ const page = () => {
                 <li className="flex text-[17px] mt-6 font-sans items-start gap-2">
                   <LuClock5 className="text-[20px]" />
                   <span>
-                    8AM – 6PM{' '}
+                    8AM – 6PM{" "}
                     <em className="text-gray-500">excluding public holidays</em>
                   </span>
                 </li>
@@ -61,7 +61,7 @@ const page = () => {
                 <li className="flex text-[17px] font-sans mt-6 items-start gap-2">
                   <LuClock5 className="text-[20px] " />
                   <span>
-                    Weekdays 6PM – 10PM and 7 – 8AM and{' '}
+                    Weekdays 6PM – 10PM and 7 – 8AM and{" "}
                     <em>Weekends 7AM – 10PM</em>
                   </span>
                 </li>
@@ -78,10 +78,10 @@ const page = () => {
           </div>
           <div className=" text-gray-500 font-sans mt-10 lg:py-10 py-0 p-3 text-center font-lightbold">
             <p className="lg:text-[17px] text-[14px]  leading-[2.5] italic">
-              For{' '}
+              For{" "}
               <b>
                 public holiday and emergency overnight appointments (10pm-7am)
-              </b>{' '}
+              </b>{" "}
               and where a vet is able to attend an additional $150 charge
               applies in addition to normal
             </p>
@@ -94,7 +94,7 @@ const page = () => {
               pet. For bookings for multiple pets, please
             </p>
             <p className="lg:text-[17px] text-[14px] leading-[2.5] italic">
-              contact our team on{' '}
+              contact our team on{" "}
               <span className="text-primary">1300 799 452</span>
             </p>
           </div>
@@ -103,7 +103,7 @@ const page = () => {
         {/* cards */}
         <div className="relative w-full h-full z-10 pb-26">
           <Image
-            src={'/images/decor1.svg'}
+            src={"/images/decor1.svg"}
             alt="decor"
             height={550}
             width={655}
@@ -126,10 +126,10 @@ const page = () => {
                     <p className="font-sans text-gray-500 lg:text-[18px] text-[14px] leading-[2] mb-4 mt-5">
                       Private cremation with the return of your pet’s ashes and
                       a selection of memorial options are available at
-                      additional cost from $390.{' '}
+                      additional cost from $390.{" "}
                       <a href="#" className="text-primary hover:underline">
                         Click here
-                      </a>{' '}
+                      </a>{" "}
                       to learn more about our available aftercare options in
                       your area.
                     </p>

@@ -5,25 +5,52 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-const navLinks = [
-  { title: 'Home', href: '/' },
-  {
-    title: 'Our Services',
-    subLinks: [
-      { label: 'Home Euthanasia', href: '/uk/how-it-works' },
-      { label: 'Cremation / Aftercare', href: '/uk/aftercare-services' },
-    ],
-  },
-  { title: 'About Us', href: '/about-us' },
-  { title: 'Pricing', href: '/pricing' },
-  { title: 'Locations', href: '/locations' },
-  { title: 'FAQs', href: '/faqs' },
-  { title: 'Quality of Life Scale', href: '/quality-of-life' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Call Us - 0330 2366 999', href: '/call-us' },
-];
+type NavItem = {
+  title: string;
+  href?: string;
+  subLinks?: { label: string; href: string }[];
+};
 
-function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
+const navLinksMap: Record<'uk' | 'au', NavItem[]> = {
+  uk: [
+    { title: 'Home', href: '/uk' },
+    {
+      title: 'Our Services',
+      subLinks: [
+        { label: 'Home Euthanasia', href: '/uk/how-it-works' },
+        { label: 'Cremation / Aftercare', href: '/uk/aftercare-services' },
+      ],
+    },
+    { title: 'About Us', href: '/uk/about-us' },
+    { title: 'Pricing', href: '/uk/pricing' },
+    { title: 'Locations', href: '/uk/locations' },
+    { title: 'FAQs', href: '/uk/faqs' },
+    { title: 'Quality of Life Scale', href: '/uk/quality-of-life' },
+    { title: 'Contact', href: '/uk/contact' },
+    { title: 'Call Us - 0330 2366 999', href: '/uk/call-us' },
+  ],
+  au: [
+    { title: 'Home', href: '/au' },
+    {
+      title: 'Our Services',
+      subLinks: [
+        { label: 'Home Euthanasia', href: '/au/how-it-works' },
+        { label: 'Pet Collection', href: '/au/how-it-works-pet-collection' },
+        { label: 'Cremation / Aftercare', href: '/au/aftercare-services' },
+      ],
+    },
+    { title: 'About Us', href: '/au/about-us' },
+    { title: 'Pricing', href: '/au/pricing' },
+    { title: 'Locations', href: '/au/locations' },
+    { title: 'FAQs', href: '/au/faqs' },
+    { title: 'Quality of Life Scale', href: '/au/quality-of-life' },
+    { title: 'Contact', href: '/au/contact' },
+    { title: 'Call Us - 1300 799 452', href: '/call-us' },
+  ],
+};
+
+function Navbarhome({ country = 'uk' }: { country?: 'uk' | 'au' }) {
+  const navLinks = navLinksMap[country];
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
@@ -49,7 +76,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
       }`}
     >
       <div className="container-fluid px-4 md:px-8 flex flex-wrap items-center justify-between relative">
-        {/* Hamburger Toggle */}
+        {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="relative h-7 w-7 mr-4 select-none rounded-lg text-center text-xs font-medium uppercase text-inherit transition-all xl:hidden"
@@ -58,9 +85,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
           {menuOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`w-6 h-6 ${
-                isScrolled ? 'text-black' : 'text-white'
-              } xl:text-inherit`}
+              className={`w-6 h-6 ${isScrolled ? 'text-black' : 'text-white'}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -75,9 +100,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`w-6 h-6 ${
-                isScrolled ? 'text-black' : 'text-white'
-              } xl:text-inherit`}
+              className={`w-6 h-6 ${isScrolled ? 'text-black' : 'text-white'}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -92,11 +115,11 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
           )}
         </button>
 
-        {/* Logo with Scroll-Based Image Switch */}
+        {/* Logo */}
         <Link href="/" className="block cursor-pointer py-1.5">
           <div className="p-1 rounded">
             <Image
-              src={isScrolled ? '/images/logo.png' : '/images/logo.png'}
+              src="/images/logo.png"
               alt="Logo"
               width={160}
               height={130}
@@ -113,7 +136,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         {/* Desktop Nav */}
         <div className="hidden xl:flex flex-1 justify-center">
           <ul
-            className={`flex items-center gap-6 text-sm 2xl:text-base font-medium font-sans transition-colors duration-300 ${
+            className={`flex items-center gap-6 text-sm font-semibold font-sans transition-colors duration-300 ${
               isScrolled ? 'text-[#404040]' : 'text-[#404040]'
             }`}
           >
@@ -121,28 +144,16 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
               <li key={index} className="relative group">
                 {item.subLinks ? (
                   <>
-                    <button
-                      className={`relative flex items-center gap-1 transition-all duration-300 ${
-                        isScrolled ? 'text-[#404040]' : 'text-[#404040]'
-                      } group-hover:text-primary cursor-pointer 
-              after:content-[''] after:absolute after:left-0 after:bottom-[-63px] 
-              after:h-[2px] after:w-full after:bg-primary 
-              after:scale-x-0 group-hover:after:scale-x-100 
-              after:origin-left after:transition-transform after:duration-300`}
-                    >
+                    <button className="relative flex items-center gap-1 group-hover:text-primary">
                       {item.title}
-                      <ChevronDownIcon
-                        className={`w-4 h-4 transition-colors duration-300 ${
-                          isScrolled ? 'text-[#404040]' : 'text-[#404040]'
-                        } group-hover:text-primary`}
-                      />
+                      <ChevronDownIcon className="w-4 h-4 group-hover:text-primary" />
                     </button>
-                    <ul className="absolute right-0 mt-2  bg-primary backdrop-blur-sm w-56 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
+                    <ul className="absolute right-0 mt-2 bg-primary backdrop-blur-sm shadow-md rounded-md w-48 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
                       {item.subLinks.map((sub, i) => (
                         <li key={i}>
                           <Link
                             href={sub.href}
-                            className="block px-4 py-2 text-sm 2xl:text-base text-white hover:text-white hover:bg-white/40"
+                            className="block px-4 py-2 text-sm text-white hover:text-white hover:bg-white/40"
                           >
                             {sub.label}
                           </Link>
@@ -151,18 +162,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                     </ul>
                   </>
                 ) : (
-                  <Link
-                    href={`/${country}${item.href}` || '#'}
-                    className={`relative block transition-all duration-300 ${
-                      isScrolled
-                        ? 'text-[#404040] after:bottom-[-37px]'
-                        : 'text-[#404040] after:bottom-[-62px]'
-                    } hover:text-primary 
-            after:content-[''] after:absolute after:left-0  
-            after:h-[2px] after:w-full after:bg-primary 
-            after:scale-x-0 hover:after:scale-x-100 
-            after:origin-left after:transition-transform after:duration-300`}
-                  >
+                  <Link href={item.href!} className="hover:text-primary">
                     {item.title}
                   </Link>
                 )}
@@ -171,8 +171,8 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
           </ul>
         </div>
 
-        {/* Appointment Button */}
-        <div className="">
+        {/* CTA Button */}
+        <div>
           <Link
             href="/request-appointment"
             className="px-4 py-3 lg:px-6 lg:py-4 cursor-pointer font-sans text-[11.4px] md:text-sm xl:text-[12px] font-semibold text-white bg-primary rounded-md transition"
@@ -181,9 +181,10 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
           </Link>
         </div>
       </div>
-      {/* Mobile Menu Panel */}
+
+      {/* Mobile Menu */}
       <div
-        className={`xl:hidden fixed top-0 left-0 h-screen w-[70%] max-w-xs bg-white shadow-md z-[9998] transform transition-transform duration-300 ease-in-out ${
+        className={`xl:hidden fixed top-0 left-0 h-screen w-[70%] max-w-xs bg-white shadow-md z-[9998] transform transition-transform duration-300 ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -211,7 +212,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
             </h3>{' '}
           </button>
 
-          <p className="text-[#404040] font-semibold font-sans text-sm py-5 ml-2">
+          <p className="text-background font-sans text-sm py-5 ml-2">
             0330 2366 999
           </p>
 
@@ -222,11 +223,11 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                   <div>
                     <button
                       onClick={() => toggleDropdown(index)}
-                      className="w-full text-left cursor-pointer text-[17.5px] font-sans text-[#404040] flex justify-between items-center pr-2"
+                      className="w-full text-left text-[17.5px] flex justify-between items-center"
                     >
                       {item.title}
                       <div
-                        className={`ml-2 w-8 h-8 rounded-full bg-white border border-foreground flex items-center justify-center transition-transform duration-300 ${
+                        className={`ml-2 w-8 h-8 rounded-full bg-white border flex items-center justify-center transition-transform ${
                           openDropdown === index ? 'rotate-180' : ''
                         }`}
                       >
@@ -239,7 +240,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                           <li key={i}>
                             <Link
                               href={sub.href}
-                              className="block py-1 text-[16px] font-sans text-[#404040]"
+                              className="block py-1 text-[16px]"
                               onClick={() => setMenuOpen(false)}
                             >
                               {sub.label}
@@ -251,8 +252,8 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                   </div>
                 ) : (
                   <Link
-                    href={`/${country}${item.href}` || '#'}
-                    className="block text-[17.5px] font-sans text-[#404040]"
+                    href={item.href!}
+                    className="block text-[17.5px]"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.title}
@@ -267,8 +268,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
             <a
               href="https://facebook.com"
               target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white"
             >
               <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
                 <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.5 1.5-3.89 3.8-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12Z" />
@@ -277,8 +277,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
             <a
               href="https://instagram.com"
               target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white"
             >
               <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5">
                 <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
