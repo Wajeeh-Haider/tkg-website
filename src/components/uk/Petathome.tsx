@@ -20,7 +20,7 @@ const Petathome = () => {
       {/* Main Content  */}
       <div className="relative z-10 container mx-auto xl:grid lg:grid-cols-2 xl:grid-cols-3 items-start">
         <div className="w-full md:w-[65%] xl:w-[100%] xl:pr-1">
-          <h2 className="text-[27.5px] md:text-[38.5px] xl:text-[57.76px] font-semibold text-[#306060] font-serif">
+          <h2 className="text-[27.5px] md:text-[38.5px] xl:text-[57.76px] font-medium text-[#306060] font-serif">
             Pet Euthanasia At Home
           </h2>
           <p className="font-sans text-[#404040] my-6 pr-[3.5px] text-sm xl:text-[16px] leading-[1.8]">
@@ -34,7 +34,7 @@ const Petathome = () => {
           <Link href="/uk">
             <Button
               label="READ MORE"
-              className="hover:gap-2 hover:opacity-80 bg-[#0e797d] text-white text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+              className="hover:gap-2 hover:opacity-80 cursor-pointer font-sans bg-[#0e797d] text-white text-[13.25px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
             />
           </Link>
         </div>

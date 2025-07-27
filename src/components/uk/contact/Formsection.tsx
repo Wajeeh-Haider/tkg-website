@@ -133,7 +133,6 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
               value={formData.name}
               onChange={(e) => handleChange('name', e.target.value)}
               error={formErrors.name}
-              placeholder="Enter your name"
             />
           </div>
 
@@ -145,7 +144,6 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
               value={formData.email}
               onChange={(e) => handleChange('email', e.target.value)}
               error={formErrors.email}
-              placeholder="Enter your email"
             />
             <Input
               label="Phone"
@@ -154,7 +152,6 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
               value={formData.phone}
               onChange={(e) => handleChange('phone', e.target.value)}
               error={formErrors.phone}
-              placeholder="Enter your phone number"
             />
           </div>
 
@@ -162,7 +159,9 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
           <div className="relative w-full">
             <label
               className={`block mb-1 font-sans text-[#404040] text-sm font-medium  lg:text-[16px] ${
-                formErrors.contactMethod ? 'text-[#f44336]' : 'text-gray-700'
+                formErrors.contactMethod
+                  ? 'text-[#f44336]'
+                  : 'border-[#68c6a89f] hover:border-[#306060] focus:ring-[#CEE1DF]'
               }`}
             >
               Please advise your preferred method of initial contact
@@ -181,7 +180,7 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
               className={`w-full h-12 px-4 border rounded-md flex items-center justify-between cursor-pointer transition-shadow ${
                 formErrors.contactMethod
                   ? 'border-[#f44336]'
-                  : 'border-[#406060]'
+                  : 'border-[#68c6a89f] hover:border-[#306060] focus:ring-[#CEE1DF]'
               }`}
             >
               <span>
@@ -189,7 +188,7 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
                   ?.label || 'Select an option'}
               </span>
               <svg
-                className={`w-4 h-4 ml-2 transition-transform ${
+                className={`w-4 h-4 ml-2 text-[#306060] transition-transform ${
                   open ? 'rotate-180' : ''
                 }`}
                 fill="none"
@@ -205,7 +204,7 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
               </svg>
             </div>
             {open && (
-              <ul className="absolute w-full bg-white border rounded-md mt-1 z-10">
+              <ul className="absolute w-full bg-white border rounded-md mt-1 z-10 font-sans">
                 {options.map((opt) => (
                   <li
                     key={opt.value}
@@ -213,7 +212,7 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
                       handleChange('contactMethod', opt.value);
                       setOpen(false);
                     }}
-                    className="px-4 py-2 hover:bg-[#406060] hover:text-white cursor-pointer"
+                    className="px-4 py-2 font-sans hover:bg-[#406060] hover:text-white cursor-pointer"
                   >
                     {opt.label}
                   </li>
@@ -243,9 +242,8 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
               className={`w-full h-[200px] px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
                 formErrors.message
                   ? 'border-[#f44336] focus:ring-[#f44336]'
-                  : 'border-[#406060] focus:ring-[#CEE1DF]'
+                  : 'border-[#68c6a89f] hover:border-[#306060] focus:ring-[#CEE1DF]'
               }`}
-              placeholder="Type your message here..."
             />
             {formErrors.message && (
               <p className="text-[#f44336] text-sm mt-1">
@@ -258,7 +256,7 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
           <div className="relative flex items-center">
             <Button
               label="SUBMIT"
-              className={`flex items-center gap-2 text-[13px] bg-[#0e797d] text-white lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3 ${
+              className={`flex items-center cursor-pointer gap-2 text-[13px] bg-[#0e797d] text-white lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3 ${
                 isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             />
@@ -297,7 +295,7 @@ function Formsection({ customLabels }: FormsectionProps): React.ReactElement {
           alt="Form illustration"
           width={500}
           height={500}
-          className="object-cover max-w-full h-auto"
+          className="object-cover  max-w-full h-auto"
         />
       </div>
     </div>

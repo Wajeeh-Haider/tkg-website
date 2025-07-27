@@ -30,7 +30,7 @@ const WorkData = [
 
 export default function HowItsWork() {
   return (
-    <div className="bg-[#FEFBF8]">
+    <div className="bg-[#FEFBF8] lg:pt-10">
       <div className="container mx-auto px-4">
         <h2 className="text-[27.5px] md:text-[38.5px] xl:text-[57px] font-serif text-[#306060] mb-12">
           How It Works
@@ -57,7 +57,7 @@ export default function HowItsWork() {
                 </p>
                 <Link
                   href="#"
-                  className="text-primary text-sm xl:text-[17px] font-semibold flex items-center group"
+                  className="text-primary hover:text-[#306060] font-sans font-semibold cursor-pointer text-sm xl:text-[17px] flex items-center group"
                   aria-label={step.cta}
                 >
                   {step.cta}
@@ -74,7 +74,7 @@ export default function HowItsWork() {
         <Link href="/uk" className="items-center flex justify-center mt-8">
           <Button
             label="LEARN MORE"
-            className="hover:gap-2 hover:opacity-80 border border-[#0e797d] text-[#0e797d] text-[13px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+            className="hover:gap-2 hover:bg-[#0e797d] hover:text-white font-sans font-semibold cursor-pointer border border-[#0e797d] text-[#0e797d] text-[13px] lg:text-[15px] px-4 py-3 lg:px-6 lg:py-3"
           />
         </Link>
       </div>

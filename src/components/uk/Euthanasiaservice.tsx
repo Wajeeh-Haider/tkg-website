@@ -28,7 +28,7 @@ const Euthanasiaservice: React.FC<EuthanasiaserviceProps> = ({
     <div className="bg-[#FEFBF8] py-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-6">
-          <h1 className="text-[27px] md:text-[32.5px] lg:text-[38.5px] xl:text-[57px] px-3 font-serif text-primary leading-tight">
+          <h1 className="text-[27px] md:text-[32.5px] lg:text-[38.5px] xl:text-[57px] px-3 font-serif text-[#306060] leading-tight">
             {title}
           </h1>
         </div>
@@ -61,7 +61,7 @@ const Euthanasiaservice: React.FC<EuthanasiaserviceProps> = ({
                     <Button
                       label={card.buttonLabel}
                       icon={<ChevronRightIcon className="w-5 h-5" />}
-                      className="hover:gap-2 text-[#0e797d] hover:opacity-80 text-[14px] lg:text-[15px] font-medium px-4 py-3 lg:px-0 lg:py-3"
+                      className="hover:gap-2 text-[#0e797d] hover:text-[#306060] font-sans font-semibold cursor-pointer text-[14px] lg:text-[15px] px-4 py-3 lg:px-0 lg:py-3"
                     />
                   </Link>
                 </div>

@@ -16,8 +16,7 @@ function Homerespect() {
         </h2>
 
         <p className="text-sm font-sans text-[#404040] leading-relaxed">
-          Our{' '}
-          <span className="text-[#0E797d] font-semibold">dog euthanasia</span>{' '}
+          Our <span className="text-[#0E797d] font-medium">dog euthanasia</span>{' '}
           service offers a peaceful and gentle way to say goodbye to your
           beloved dog in the comfort of their home. We understand how difficult
           this decision is, and our experienced veterinarians are here to
@@ -27,7 +26,7 @@ function Homerespect() {
 
         <button
           onClick={() => setShowMore(!showMore)}
-          className="text-[#404040] hover:underline font-medium mt-2"
+          className="text-[#404040] cursor-pointer hover:underline font-medium mt-2"
         >
           {showMore ? 'Read Less' : 'Read More'}
         </button>
@@ -40,7 +39,7 @@ function Homerespect() {
               </h3>
               <p className="text-sm font-sans text-[#404040] leading-relaxed">
                 We offer{' '}
-                <span className="text-[#0E797d] font-semibold">
+                <span className="text-[#0E797d] font-medium">
                   cat euthanasia
                 </span>{' '}
                 services designed to provide your feline friend with a gentle
@@ -57,15 +56,15 @@ function Homerespect() {
                 At The Kindest Goodbye, we are proud to offer our compassionate
                 pet euthanasia at home services across the UK. Whether you need
                 support in major cities such as{' '}
-                <span className="text-[#0E797d] font-semibold">
+                <span className="text-[#0E797d] font-medium">
                   dog euthanasia in London or dog euthanasia in Glasgow,
                 </span>{' '}
                 or want compassionate care in regions like
-                <span className="text-[#0E797d] font-semibold">
+                <span className="text-[#0E797d] font-medium">
                   dog euthanasia in Sussex
                 </span>{' '}
                 or{' '}
-                <span className="text-[#0E797d] font-semibold">
+                <span className="text-[#0E797d] font-medium">
                   dog euthanasia in Hampshire,
                 </span>
                 . our experienced veterinarians are available to provide gentle,

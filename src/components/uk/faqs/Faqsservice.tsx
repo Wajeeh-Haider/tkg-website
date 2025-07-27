@@ -176,7 +176,7 @@ function Faqsservice() {
           end-of-life decision for your pet free-of-charge, please complete our{' '}
           <Link
             href="/contact"
-            className="text-[#406060] underline font-semibold"
+            className="text-[#0e797d] underline font-medium"
           >
             contact form
           </Link>{' '}

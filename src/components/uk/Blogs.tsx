@@ -47,12 +47,12 @@ const Blogs = () => {
     <section className="bg-[#f6f0ea] py-20">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-[27.68px] xl:text-7xl tracking-tight font-serif text-primary">
+          <h2 className="text-[27.68px] xl:text-7xl tracking-tight font-serif text-[#306060]">
             Blog
           </h2>
           <Link
             href="#"
-            className="inline-block font-sans px-4 py-3 lg:px-7 lg:py-4 text-[13px] lg:text-[16px] bg-cream border-2 border-primary text-primary font-bold rounded hover:bg-primary hover:text-white transition"
+            className="inline-block font-sans px-4 py-3 lg:px-7 lg:py-4 text-[13px] lg:text-[16px] bg-cream border-2 font-semibold cursor-pointer border-primary text-primary rounded hover:bg-primary hover:text-white transition"
           >
             ALL NEWS
           </Link>

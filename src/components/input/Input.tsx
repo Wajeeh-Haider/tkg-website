@@ -25,7 +25,7 @@ const Input: React.FC<InputFieldProps> = ({
     <div className="w-full">
       <label
         htmlFor={name}
-        className={`block mb-1 font-sans text-[#404040] text-sm font-medium lg:text-[16px] ${
+        className={`block mb-1 font-sans text-sm font-medium lg:text-[16px] ${
           error ? 'text-[#f44336]' : 'text-[#404040]'
         }`}
       >
@@ -38,10 +38,10 @@ const Input: React.FC<InputFieldProps> = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`w-full h-12 px-4 border rounded-md focus:outline-none focus:ring-2 ${
+        className={`w-full h-12 px-4 border rounded-md focus:outline-none focus:ring-2 transition-all duration-200 ${
           error
             ? 'border-[#f44336] focus:ring-[#f44336]'
-            : 'border-[#406060] focus:ring-[#CEE1DF]'
+            : 'border-[#68c6a89f] hover:border-[#306060] focus:ring-[#CEE1DF]'
         }`}
       />
       {error && <p className="text-[#f44336] text-sm mt-1">{error}</p>}

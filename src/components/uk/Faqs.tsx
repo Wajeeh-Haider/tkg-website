@@ -147,7 +147,7 @@ function Faqs() {
               <Link href="/uk">
                 <Button
                   label="VIEW ALL"
-                  className="hover:gap-2 hover:opacity-80 border border-[#0e797d] text-[#0e797d] text-[14px] lg:text-[15px] font-medium px-4 py-3 lg:px-6 lg:py-3"
+                  className="hover:gap-2 hover:opacity-80 border hover:bg-[#0e797d] text-[#0e797d] border-[#0e797d]  hover:text-white font-sans font-semibold cursor-pointer text-[14px] lg:text-[15px] px-4 py-3 lg:px-6 lg:py-3"
                 />
               </Link>
             </div>

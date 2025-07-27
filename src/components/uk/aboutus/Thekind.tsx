@@ -2,7 +2,7 @@ import React from 'react';
 
 function Thekind() {
   return (
-    <div className="container mx-auto grid grid-cols-1 xl:grid-cols-2 gap-12 px-6 xl:px-0">
+    <div className="container mx-auto px-6 xl:px-14 grid grid-cols-1 xl:grid-cols-2 gap-12">
       <div className="pb-2">
         <h2 className="text-[25px] md:text-[32px] font-serif text-[#404040]">
           The Kindest Goodbye

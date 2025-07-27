@@ -45,7 +45,7 @@ const Blogscard: React.FC<BlogscardProps> = ({
 
             <Link
               href="#"
-              className="text-primary text-[12.25px] lg:text-13px font-sans xl:font-bold flex items-center"
+              className="text-primary hover:text-[#306060] cursor-pointer text-[12.25px] lg:text-14px font-sans font-semibold flex items-center"
             >
               READ MORE
               <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">

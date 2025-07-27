@@ -92,8 +92,8 @@ const locationData: RegionData[] = [
 
 export default function LocationService() {
   return (
-    <div className="container mx-auto px-4 lg:px-12 pt-4 pb-8">
-      <p className="text-[22.5px] md:text-[26.5px] xl:text-[32px] text-[#304040] font-serif mb-15">
+    <div className="container mx-auto px-4 lg:px-12 pt-12 pb-8">
+      <p className="text-[22.5px] md:text-[26.5px] xl:text-[32px] text-[#306060] font-serif mb-15">
         Our wonderful network of caring providers can provide in-home euthanasia
         services to much of the UK population, including some or all of the
         following counties/cities:

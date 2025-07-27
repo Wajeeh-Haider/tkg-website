@@ -30,7 +30,7 @@ const cards = [
 
 function Drtom() {
   return (
-    <div className="relative overflow-hidden pt-30 xl:pt-10 pb-10 md:pb-30 xl:pb-40 px-6 md:px-8 lg:px-12">
+    <div className="container mx-auto relative overflow-hidden pt-30 xl:pt-10 pb-10 md:pb-30 xl:pb-40 px-6 md:px-6 lg:px-8 xl:px-12">
       {/* Background Image on the Bottom Right */}
       <div className="absolute right-0 bottom-0 w-[500px] lg:w-[650px] h-[400px] pointer-events-none z-0">
         <Image

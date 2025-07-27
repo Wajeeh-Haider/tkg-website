@@ -37,11 +37,11 @@ export default function Home() {
               : 'bg-transparent border-b border-gray-400'
           }`}
         >
-          <div className="container-fluid px-8 flex flex-wrap items-center justify-between relative">
+          <div className="container-fluid px-6 flex flex-wrap items-center justify-between relative">
             {/* Mobile Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="relative h-6 w-6 mr-4 select-none rounded-lg text-center text-xs font-medium uppercase text-inherit transition-all lg:hidden"
+              className="relative h-6 w-6 cursor-pointer mr-4 select-none rounded-lg text-center text-xs font-medium uppercase text-inherit transition-all lg:hidden"
               type="button"
             >
               {menuOpen ? (
@@ -65,7 +65,7 @@ export default function Home() {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`w-6 h-6 ${
+                  className={`w-7 h-7 ${
                     isScrolled ? 'text-black' : 'text-white'
                   } lg:text-inherit`}
                   fill="none"
@@ -116,7 +116,7 @@ export default function Home() {
                   return (
                     <li
                       key={item}
-                      className={`flex items-center font-sans font-semibold p-1 text-[14px] gap-x-2 transition-colors duration-300 ${
+                      className={`flex items-center cursor-pointer font-sans font-semibold p-1 text-[14px] gap-x-2 transition-colors duration-300 ${
                         isScrolled ? 'text-[#404040]' : 'text-secondary'
                       }`}
                     >
@@ -156,11 +156,11 @@ export default function Home() {
                   />
                 </svg>
 
-                <h3 className="text-gray-700 font-sans text-[12.25px]">
+                <h3 className="text-[#404040] cursor-pointer font-medium font-sans text-[12.25px]">
                   CLOSE
                 </h3>
               </button>
-              <p className="text-primary font-sans text-sm py-5 ml-2">
+              <p className="text-[#0e797d]  font-medium font-sans text-sm py-5 ml-2">
                 1300 799 452
               </p>
               <hr className="my-2 border-gray-300" />
@@ -170,7 +170,7 @@ export default function Home() {
               {['Australia', 'UK'].map((item) => (
                 <li
                   key={item}
-                  className="text-gray-800 font-sans font-semibold text-base"
+                  className="text-[#404040] cursor-pointer font-sans font-medium text-[17.5px]"
                 >
                   <Link
                     href="#"
@@ -189,7 +189,7 @@ export default function Home() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
+                className="w-10 h-10 flex items-center cursor-pointer justify-center rounded-full bg-primary text-white hover:bg-primary transition"
               >
                 <svg
                   fill="currentColor"
@@ -206,7 +206,7 @@ export default function Home() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
+                className="w-10 h-10 flex items-center cursor-pointer justify-center rounded-full bg-primary text-white hover:bg-primary transition"
               >
                 <svg
                   fill="currentColor"
@@ -222,38 +222,7 @@ export default function Home() {
         </nav>
 
         {/* Hero Header */}
-        <div className="relative z-10 flex flex-col justify-center container mx-auto text-white px-0 lg:px-4 h-screen">
-<<<<<<< HEAD
-          <div className="xl:pb-30">
-            <Image
-              src="/images/Google-Reviews.png"
-              alt="Hero Image"
-              width={110}
-              height={55}
-              className="ml-6 overflow-hidden"
-            />
-            <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-bold md:w-[60%] lg:w-[66%] xl:w-[55%] leading-[1.1] mx-6 my-4 pt-2">
-              Peaceful euthanasia for
-              <span className="text-primary"> beloved pets </span>in the comfort
-              of home
-            </h1>
-            <div className="flex gap-2 py-4 ml-6">
-              <Link href="/uk/booking-request">
-                <Button
-                  label="UK"
-                  icon={<ChevronRightIcon className="w-5 h-5" />}
-                  className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
-                />
-              </Link>
-              <Link href="/au">
-                <Button
-                  label="Australia"
-                  icon={<ChevronRightIcon className="w-5 h-5" />}
-                  className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
-                />
-              </Link>
-            </div>
-=======
+        <div className="relative z-10 flex flex-col -top-10 xl:-top-18 2xl:-top-36 justify-center container mx-auto text-white px-0 lg:px-4 h-screen">
           <Image
             src="/images/google-review.png"
             alt="Hero Image"
@@ -261,7 +230,7 @@ export default function Home() {
             height={55}
             className="ml-6 overflow-hidden"
           />
-          <h1 className="text-[40px] font-serif lg:text-[56px] xl:text-[72px] font-semibold md:w-[60%] lg:w-[66%] xl:w-[62%] leading-[1.1] mx-6 my-4 pt-2">
+          <h1 className="text-[40px] font-serif lg:text-[56px] 2xl:text-[72px] font-medium md:w-[60%] lg:w-[66%] xl:w-[52%] 2xl:w-[55%] leading-[1.1] mx-6 my-4 pt-2">
             Peaceful euthanasia for
             <span className="text-primary"> beloved pets </span>in the comfort
             of home
@@ -271,22 +240,22 @@ export default function Home() {
               <Button
                 label="UK"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+                className="hover:gap-2 bg-[#0e797d] cursor-pointer text-white font-sans text-[13.125px] font-semibold hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
             <Link href="/au">
               <Button
                 label="Australia"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 bg-[#0e797d] text-white hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+                className="hover:gap-2 bg-[#0e797d] cursor-pointer text-white font-sans text-[13.125px] font-semibold hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
->>>>>>> 96d8ceefdf4aaa4ec7c2fa4be2fd89d8e520c6a0
           </div>
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block">
+
+          <div className="absolute bottom-5 lg:-bottom-8 xl:-bottom-27 left-1/2 -translate-x-1/2 z-20 hidden md:block">
             <button
               onClick={scrollToSection}
-              className="group relative w-7 h-12 lg:w-8 lg:h-14 mb-15 lg:mb-30 xl:mb-35 border-2 lg:border-4 border-white rounded-full flex justify-center items-start transition-all duration-300 hover:scale-105"
+              className="group relative cursor-pointer w-7 h-12 lg:w-8 lg:h-14 mb-15 lg:mb-30 xl:mb-35 border-2 lg:border-2 border-white rounded-full flex justify-center items-start transition-all duration-300 hover:scale-105"
             >
               <span className="dot w-2 h-2 bg-white rounded-full mt-2 transition-all duration-500 group-hover:translate-y-6"></span>
             </button>
@@ -296,7 +265,7 @@ export default function Home() {
       {/* Top Content */}
       <div className="bg-primary ">
         <div className="container mx-auto text-white px-6 py-15">
-          <h2 className="text-[27.5px] md:text-[39px] font-serif xl:text-[59px] w-full md:w-[50%] font-semibold lg:ml-6 lg:py-6 leading-snug">
+          <h2 className="text-[27.68px] md:text-[38.72px] font-serif xl:text-[59px] w-full md:w-[50%] font-medium lg:ml-6 lg:py-6 leading-snug">
             In-home pet euthanasia for your beloved friend
           </h2>
           <div className="lg:mx-6 mt-16 lg:mt-10 border-t border-white/20" />
@@ -313,12 +282,15 @@ export default function Home() {
             className="brightness-[10%] grayscale invert opacity-90 ml-6 lg:ml-10 mb-16"
           />
           <div className="md:flex md:justify-between md:items-center text-white px-6 py-4 lg:ml-6">
-            <h3 className="font-sans text-[13px] pb-12 md:pb-0">
+            <h3 className="font-sans text-[12.25px] pb-12 md:pb-0">
               ©The Kindest Goodbye 2025
             </h3>
-            <p className="font-sans text-[13px]">
+            <p className="font-sans text-[12.25px]">
               Website by &nbsp;
-              <Link href="#" className="underline hover:text-white/80">
+              <Link
+                href="#"
+                className="underline cursor-pointer hover:text-white/80"
+              >
                 SGD
               </Link>
             </p>

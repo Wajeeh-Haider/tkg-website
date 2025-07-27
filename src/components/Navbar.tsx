@@ -73,13 +73,13 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         {/* Hamburger Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="relative h-6 w-6 mr-4 select-none rounded-lg text-center text-xs font-medium uppercase text-inherit transition-all xl:hidden"
+          className="relative h-7 w-7 mr-4 select-none rounded-lg text-center text-xs font-medium uppercase text-inherit transition-all xl:hidden"
           type="button"
         >
           {menuOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`w-6 h-6 ${
+              className={`w-7 h-7 ${
                 isScrolled ? 'text-black' : 'text-white'
               } xl:text-inherit`}
               fill="none"
@@ -142,7 +142,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         {/* Desktop Nav */}
         <div className="hidden xl:flex flex-1 justify-center">
           <ul
-            className={`flex items-center gap-6 text-sm xl:text-base font-semibold font-sans transition-colors duration-300 ${
+            className={`flex items-center gap-6 text-sm 2xl:text-base font-semibold font-sans transition-colors duration-300 ${
               isScrolled ? 'text-gray-800' : 'text-white'
             }`}
           >
@@ -166,12 +166,12 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                         } group-hover:text-primary `}
                       />
                     </button>
-                    <ul className="absolute right-0 mt-2 bg-primary backdrop-blur-sm shadow-md rounded-md w-48 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
+                    <ul className="absolute right-0 mt-2  bg-primary backdrop-blur-sm w-56 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
                       {item.subLinks.map((sub, i) => (
                         <li key={i}>
                           <Link
                             href={sub.href}
-                            className="block px-4 py-2 text-sm text-white hover:text-white hover:bg-white/40"
+                            className="block px-4 py-2 text-sm 2xl:text-base text-white hover:text-white hover:bg-white/40"
                           >
                             {sub.label}
                           </Link>
@@ -203,7 +203,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         <div className="">
           <Link
             href="/request-appointment"
-            className="px-4 py-3 lg:px-6 lg:py-4 text-[10px] md:text-sm xl:text-[12px] font-semibold text-white bg-primary rounded-md transition"
+            className="px-4 py-3 lg:px-6 lg:py-4 cursor-pointer font-sans text-[11.4px] md:text-sm xl:text-[12px] font-semibold text-white bg-primary rounded-md transition"
           >
             REQUEST AN APPOINTMENT
           </Link>
@@ -235,10 +235,12 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-            <h3 className="text-sm">CLOSE</h3>
+            <h3 className="text-[#404040] cursor-pointer font-medium font-sans text-[12.25px]">
+              CLOSE
+            </h3>
           </button>
           <div>
-            <p className="text-background font-sans text-sm py-5 ml-2">
+            <p className="text-[#404040] font-semibold font-sans text-sm py-5 ml-2">
               0330 2366 999
             </p>
             <ul className="flex flex-col gap-4 mt-6">
@@ -288,12 +290,12 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
               ))}
 
               {/* Social Links */}
-              <div className="flex gap-4 px-6 mt-6">
-                <a
+              <div className="flex gap-4 px-2 mt-6">
+                <Link
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:bg-primary transition"
+                  className="w-10 h-10 flex items-center cursor-pointer justify-center rounded-full bg-primary text-white hover:bg-primary transition"
                 >
                   <svg
                     fill="currentColor"
@@ -302,8 +304,8 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                   >
                     <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.41c0-2.5 1.5-3.89 3.8-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12Z" />
                   </svg>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -316,7 +318,7 @@ export default function Navbar({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                   >
                     <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </ul>
           </div>

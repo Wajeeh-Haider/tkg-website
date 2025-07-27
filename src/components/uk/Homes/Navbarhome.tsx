@@ -52,7 +52,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         {/* Hamburger Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="relative h-6 w-6 mr-4 select-none rounded-lg text-center text-xs font-medium uppercase text-inherit transition-all xl:hidden"
+          className="relative h-7 w-7 mr-4 select-none rounded-lg text-center text-xs font-medium uppercase text-inherit transition-all xl:hidden"
           type="button"
         >
           {menuOpen ? (
@@ -113,12 +113,12 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         {/* Desktop Nav */}
         <div className="hidden xl:flex flex-1 justify-center">
           <ul
-            className={`flex items-center gap-6 text-sm font-semibold font-sans transition-colors duration-300 ${
+            className={`flex items-center gap-6 text-sm 2xl:text-base font-medium font-sans transition-colors duration-300 ${
               isScrolled ? 'text-[#404040]' : 'text-[#404040]'
             }`}
           >
             {navLinks.map((item, index) => (
-              <li key={index} className="relative group text-[17px]">
+              <li key={index} className="relative group">
                 {item.subLinks ? (
                   <>
                     <button
@@ -137,12 +137,12 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                         } group-hover:text-primary`}
                       />
                     </button>
-                    <ul className="absolute right-0 mt-2 bg-primary backdrop-blur-sm shadow-md rounded-md w-48 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
+                    <ul className="absolute right-0 mt-2  bg-primary backdrop-blur-sm w-56 py-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300 z-50">
                       {item.subLinks.map((sub, i) => (
                         <li key={i}>
                           <Link
                             href={sub.href}
-                            className="block px-4 py-2 text-sm text-white hover:text-white hover:bg-white/40"
+                            className="block px-4 py-2 text-sm 2xl:text-base text-white hover:text-white hover:bg-white/40"
                           >
                             {sub.label}
                           </Link>
@@ -175,7 +175,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
         <div className="">
           <Link
             href="/request-appointment"
-            className="px-4 py-3 lg:px-6 lg:py-4 text-[10px] md:text-sm xl:text-[12px] font-semibold text-white bg-primary rounded-md transition"
+            className="px-4 py-3 lg:px-6 lg:py-4 cursor-pointer font-sans text-[11.4px] md:text-sm xl:text-[12px] font-semibold text-white bg-primary rounded-md transition"
           >
             REQUEST AN APPOINTMENT
           </Link>
@@ -206,10 +206,12 @@ function Navbarhome({ country = 'uk' }: { country?: 'au' | 'uk' }) {
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-            <h3 className="text-sm">CLOSE</h3>
+            <h3 className="text-[#404040] cursor-pointer font-medium font-sans text-[12.25px]">
+              CLOSE
+            </h3>{' '}
           </button>
 
-          <p className="text-background font-sans text-sm py-5 ml-2">
+          <p className="text-[#404040] font-semibold font-sans text-sm py-5 ml-2">
             0330 2366 999
           </p>
 

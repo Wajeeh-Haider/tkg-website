@@ -289,7 +289,7 @@ export default function Journey({ customLabels }: FormsectionProps) {
         <p className="text-sm font-sans mb-2">
           Step {currentStep} of {totalSteps}
         </p>
-        <div className="w-full bg-[#e5f2f2] h-5 rounded-full overflow-hidden mb-10">
+        <div className="w-full bg-[#e5f2f2] h-5 rounded-full font-sans overflow-hidden mb-10">
           <div
             className="bg-[#0e797d] h-full flex items-center justify-center text-white text-[13px] transition-all duration-300 ease-in-out"
             style={{ width: `${progress}%` }}
@@ -305,7 +305,7 @@ export default function Journey({ customLabels }: FormsectionProps) {
               {step.title}
             </h1>
             <p className="font-sans text-sm xl:text-[17px] text-[#404040] leading-relaxed">
-              <span className="font-bold">Instructions: </span>
+              <span className="font-semibold">Instructions: </span>
               {step.description}
             </p>
           </>
@@ -316,7 +316,10 @@ export default function Journey({ customLabels }: FormsectionProps) {
             <h2 className="text-[18px] font-sans text-[#404040] mb-6">
               {step.title}
             </h2>
-            <div className="space-y-4 mb-4 text-sm text-[#404040]">
+            <h4 className="text-[12.25px] xl:text-sm font-sans text-[#404040] mb-2">
+              Scale points to consider:
+            </h4>
+            <div className="space-y-2 mb-4 text-[12.25px] xl:text-sm font-light font-sans text-[#404040]">
               {step.points &&
                 step.points.map((point) => (
                   <p key={point.score}>
@@ -324,12 +327,12 @@ export default function Journey({ customLabels }: FormsectionProps) {
                   </p>
                 ))}
             </div>
-            <div className="flex gap-4 mb-6 pt-4">
+            <div className="flex gap-4 font-sans mb-6 pt-4">
               {[1, 2, 3, 4, 5].map((num) => (
                 <button
                   key={num}
                   onClick={() => handleSelectScore(num)}
-                  className={`w-10 h-10 rounded-full flex items-center justify-center text-lg font-semibold ${
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-sm lg:text-lg font-medium  ${
                     selectedScores[currentStep] === num
                       ? 'bg-[#0e797d] text-white'
                       : 'bg-[#0e797d33] text-[#404040] hover:bg-gray-300'
@@ -348,10 +351,10 @@ export default function Journey({ customLabels }: FormsectionProps) {
               {step.title}
             </h2>
             <p className="text-sm text-[#404040] mb-6">{step.description}</p>
-            <p className="text-sm font-sans text-[#404040] pb-4">
+            <p className="text-sm font-sans font-semibold text-[#404040] pb-4">
               Total for my pet
             </p>
-            <p className="text-lg font-bold text-[#0e797d]">
+            <p className="text-lg font-light pl-4 font-sans text-[#404040]">
               {getTotalScore()}
             </p>
           </>
@@ -379,7 +382,7 @@ export default function Journey({ customLabels }: FormsectionProps) {
                   type="checkbox"
                   checked={showForm}
                   onChange={(e) => handleCheckboxChange(e, 2)}
-                  className="form-checkbox h-5 w-5 text-teal-700"
+                  className="form-checkbox  h-5 w-5 text-teal-700"
                 />
                 <span className="text-sm leading-6">
                   Organise a callback from one of our team to discuss your pet's
@@ -394,14 +397,14 @@ export default function Journey({ customLabels }: FormsectionProps) {
                 <Link href="/uk">
                   <Button
                     label="REQUEST AN APPOINTMENT"
-                    className="hover:gap-2 hover:opacity-80 bg-[#0e797d] text-white text-sm font-medium px-6 py-3"
+                    className="hover:gap-2 cursor-pointer font-sans hover:opacity-80  bg-[#0e797d] text-white text-sm font-medium px-6 py-3"
                   />
                 </Link>
                 <p className="text-sm text-gray-700">or</p>
                 <Link href="tel:0330 2366 999">
                   <Button
                     label="CALL US"
-                    className="hover:gap-2 hover:opacity-80 bg-[#0e797d] text-white text-sm font-medium px-6 py-3"
+                    className="hover:gap-2 cursor-pointer font-sans font-medium  hover:opacity-80 bg-[#0e797d] text-white text-sm px-6 py-3"
                   />
                 </Link>
               </div>
@@ -417,7 +420,6 @@ export default function Journey({ customLabels }: FormsectionProps) {
                     value={formData.name}
                     onChange={(e) => handleChange('name', e.target.value)}
                     error={formErrors.name}
-                    placeholder="Enter your name"
                   />
                   <Input
                     label={customLabels?.lastName || 'Last Name'}
@@ -425,7 +427,6 @@ export default function Journey({ customLabels }: FormsectionProps) {
                     value={formData.lastName}
                     onChange={(e) => handleChange('lastName', e.target.value)}
                     error={formErrors.lastName}
-                    placeholder="Enter your last name"
                   />
                 </div>
                 <div className="flex flex-col md:flex-row gap-4">
@@ -435,7 +436,6 @@ export default function Journey({ customLabels }: FormsectionProps) {
                     value={formData.petName}
                     onChange={(e) => handleChange('petName', e.target.value)}
                     error={formErrors.petName}
-                    placeholder="Enter your pet's name"
                   />
                   <Input
                     label={customLabels?.petBreed || "Your pet's breed"}
@@ -443,11 +443,10 @@ export default function Journey({ customLabels }: FormsectionProps) {
                     value={formData.petBreed}
                     onChange={(e) => handleChange('petBreed', e.target.value)}
                     error={formErrors.petBreed}
-                    placeholder="Enter your pet's breed"
                   />
                 </div>
                 <label
-                  className={`block mb-1 font-sans text-[#404040] text-sm lg:text-[16px] ${
+                  className={`block mb-1 font-sans text-[#404040] font-medium text-sm lg:text-[16px] ${
                     formErrors.message ? 'text-[#f44336]' : 'text-gray-700'
                   }`}
                 >
@@ -460,9 +459,8 @@ export default function Journey({ customLabels }: FormsectionProps) {
                   className={`w-full h-[200px] px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
                     formErrors.message
                       ? 'border-[#f44336] focus:ring-[#f44336]'
-                      : 'border-[#406060] focus:ring-[#CEE1DF]'
+                      : 'border-[#68c6a89f] hover:border-[#306060] focus:ring-[#CEE1DF]'
                   }`}
-                  placeholder="Type your message..."
                 />
                 {formErrors.message && (
                   <p className="text-red-500 text-sm mt-1">
@@ -476,7 +474,6 @@ export default function Journey({ customLabels }: FormsectionProps) {
                     value={formData.email}
                     onChange={(e) => handleChange('email', e.target.value)}
                     error={formErrors.email}
-                    placeholder="Enter your email"
                   />
                   <Input
                     label="Phone"
@@ -484,7 +481,6 @@ export default function Journey({ customLabels }: FormsectionProps) {
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
                     error={formErrors.phone}
-                    placeholder="Enter your phone number"
                   />
                 </div>
               </form>
@@ -505,7 +501,7 @@ export default function Journey({ customLabels }: FormsectionProps) {
                 }, 1000);
               }}
               label="PREVIOUS"
-              className={`px-6 py-3 bg-[#FEFBF8] border border-[#0e797d] text-[#0e797d] transition ${
+              className={`px-6 py-3 cursor-pointer font-sans font-medium bg-[#FEFBF8] border border-[#0e797d] text-[#0e797d] transition ${
                 isLoadingPrevious ? 'opacity-50 cursor-not-allowed' : ''
               }`}
             />
@@ -524,7 +520,7 @@ export default function Journey({ customLabels }: FormsectionProps) {
                   }, 1000);
                 }}
                 label="NEXT"
-                className={`px-6 py-3 bg-teal-700 text-white hover:bg-teal-800 transition ${
+                className={`px-6 py-3 cursor-pointer bg-teal-700 text-white hover:bg-opacity-80 font-sans font-medium transition ${
                   isLoadingNext || isLoadingPrevious
                     ? 'opacity-50 cursor-not-allowed pointer-events-none'
                     : ''
@@ -560,7 +556,7 @@ export default function Journey({ customLabels }: FormsectionProps) {
             <Button
               onClick={handleSubmit}
               label="SUBMIT"
-              className="px-6 py-3 bg-teal-700 text-white hover:bg-teal-800 transition"
+              className="px-6 py-3 cursor-pointer font-sans font-medium bg-teal-700 text-white hover:bg-teal-800 transition"
             />
           )}
         </div>

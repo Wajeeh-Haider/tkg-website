@@ -110,7 +110,7 @@ function PricingSection({
       <Link href="/" className="mt-10 block">
         <Button
           label="MAKE A BOOKING"
-          className={`hover:gap-2 hover:opacity-80 text-white text-[13px] lg:text-[15px] font-medium mt-20 px-4 py-3 lg:px-6 lg:py-3 ${buttonClassName}`}
+          className={`hover:gap-2 hover:opacity-80 cursor-pointer hover:bg-[#0e797d] font-sans text-white text-[13px] lg:text-[15px] font-medium mt-20 px-4 py-3 lg:px-6 lg:py-3 ${buttonClassName}`}
         />
       </Link>
     </div>

@@ -142,10 +142,10 @@ const Footer = () => {
         </div>
 
         <div className="md:flex md:justify-between md:items-center text-white pb-4 pt-18 lg:ml-6">
-          <h3 className="font-sans text-[13px] xl:text-[14px] pb-12 md:pb-0">
+          <h3 className="font-sans text-[13.25px] xl:text-[14px] pb-12 md:pb-0">
             ©The Kindest Goodbye 2025
           </h3>
-          <p className="font-sans text-[13px] xl:text-[14px]">
+          <p className="font-sans text-[13.25px] xl:text-[14px]">
             Website by &nbsp;
             <Link href="#" className="underline hover:text-white/80">
               SGD
