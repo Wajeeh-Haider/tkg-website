@@ -1,6 +1,7 @@
-'use client';
-import React, { useState } from 'react';
-import Image from 'next/image';
+"use client";
+import React, { useState, useRef } from "react";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
 
 const faqData = [
   {
@@ -35,7 +36,7 @@ const faqData = [
   },
   {
     question: "When is the right time to put my pet to sleep?",
-answer: `
+    answer: `
   <p>There are no strict, hard and fast rules around this question and ultimately, the decision must be yours as your pet’s guardian to make.</p>
   <p>However, the following points may help guide your decision-making:</p>
 
@@ -70,7 +71,6 @@ answer: `
     QUALITY OF LIFE SCALE FOR PETS
   </a>
 `,
-
   },
   {
     question: "What are your operating hours?",
@@ -115,6 +115,9 @@ function Faqs() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <div className="bg-[#FEFBF8]">
       <div className="relative w-full h-full z-10">
@@ -125,91 +128,97 @@ function Faqs() {
           width={750}
           className="absolute bottom-0 left-0 -z-1 pointer-events-none"
         />
-        <div className="container mx-auto pb-25 z-20 p-2" >
-        <h1 className="lg:text-7xl text-[27.86px] font-serif text-[#333333] mb-8">
-          FAQS
-        </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* FAQ List */}
-          <div className="space-y-4">
-            {faqData.map((item, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div
-                  key={index}
-                  className="transition-all duration-200 font-serif bg-[#E8EFF4] border border-gray-200"
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggle(index)}
-                    className={`flex items-center justify-between w-full px-4 py-5 sm:p-6 cursor-pointer transition-colors ${
-                      isOpen ? 'bg-[#E5F2F2]' : ''
-                    }`}
-                  >
-                    <span
-                      className={`text-[20.8px] lg:text-[24px] md:pr-6 lg:pr-0  text-start transition-colors ${
-                        isOpen ? 'text-[#404040]' : 'text-[#404040]'
-                      }`}
-                    >
-                      {item.question}
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`w-6 h-6 transform transition-transform ${
-                        isOpen ? 'rotate-180 text-primary' : 'text-[#6591C0]'
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {isOpen && (
-                    <div className="px-4 pb-5 sm:px-6 sm:pb-6 bg-[#E5F2F2]">
-                      <div
-                        className="faq-content lg:text-[17px] text-[14px] leading-[2.2]  text-gray-600 font-sans"
-                        dangerouslySetInnerHTML={{ __html: item.answer }}
-                      />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-
-        <a
-          href="/au/faqs"
-          className="inline-block px-7 py-4 mt-5 bg-[#FEFBF8] border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition duration-300"
+        {/* Animate on scroll into view */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 80 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="container mx-auto pb-15 z-20 p-2"
         >
-          VIEW ALL
-        </a>
-          </div>
+          <h1 className="lg:text-[57.76px] text-[27.86px] font-serif text-[#333333] mb-8">
+            FAQS
+          </h1>
 
-          {/* Image */}
-          <div className="w-full">
-            <Image
-              src="/images/dog2.jpg"
-              alt="Pet and owner"
-              width={800}
-              height={600}
-              className="w-full h-auto  object-cover"
-              priority
-            />
-          </div>
-        </div>
-      </div>
-      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* FAQ List */}
+            <div className="space-y-4">
+              {faqData.map((item, index) => {
+                const isOpen = openIndex === index;
+                return (
+                  <div
+                    key={index}
+                    className="transition-all duration-200 font-serif bg-[#E8EFF4] border border-gray-200"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => toggle(index)}
+                      className={`flex items-center justify-between w-full px-4 py-5 sm:p-6 cursor-pointer transition-colors ${
+                        isOpen ? "bg-[#E5F2F2]" : ""
+                      }`}
+                    >
+                      <span
+                        className={`text-[20.8px] lg:text-[24px] md:pr-6 lg:pr-0  text-start transition-colors ${
+                          isOpen ? "text-[#404040]" : "text-[#404040]"
+                        }`}
+                      >
+                        {item.question}
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`w-6 h-6 transform transition-transform ${
+                          isOpen ? "rotate-180 text-primary" : "text-[#6591C0]"
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isOpen && (
+                      <div className="px-4 pb-5 sm:px-6 sm:pb-6 bg-[#E5F2F2]">
+                        <div
+                          className="faq-content lg:text-[17px] text-[14px] leading-[2.2] text-gray-600 font-sans"
+                          dangerouslySetInnerHTML={{ __html: item.answer }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
 
+              <a
+                href="/au/faqs"
+                className="inline-block px-7 py-4 mt-5 bg-[#FEFBF8] border-2 text-primary font-bold rounded hover:bg-teal-700 hover:text-white transition duration-300"
+              >
+                VIEW ALL
+              </a>
+            </div>
+
+            {/* Image */}
+            <div>
+              <Image
+                src="/images/dog2.jpg"
+                alt="Pet and owner"
+                width={800}
+                height={600}
+                className="w-full lg:w-[663px] lg:h-[544px] h-auto object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 }
 
-
-export default Faqs
+export default Faqs;

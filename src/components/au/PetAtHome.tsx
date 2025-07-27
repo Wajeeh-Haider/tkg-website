@@ -1,9 +1,15 @@
 "use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { MdOutlinePets } from "react-icons/md";
+import { motion, useInView } from "framer-motion"; // ✅ Import framer-motion
+
 const PetAtHome = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <div className="bg-[#FEFBF8] ">
       <div className="relative w-full h-full z-10">
@@ -15,7 +21,13 @@ const PetAtHome = () => {
           className="absolute top-20 -z-1"
         />
 
-        <div className="container mx-auto pt-10 xl:pb-60 pb-5 lg:pr-0 pr-2 lg:pl-0 pl-2 z-20">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 80 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="container mx-auto pt-10 xl:pb-40 pb-5 lg:pr-0 pr-2 lg:pl-0 pl-2 z-20"
+        >
           <div className="flex xl:flex-row lg:flex-col md:flex-col flex-col gap-6 items-center mb-6">
             <div className="w-full md:w-1/2 md:mr-auto md:ml-7">
               <h1 className="xl:text-7xl lg:text-[56px] text-[40px] text-primary font-serif">
@@ -37,14 +49,14 @@ const PetAtHome = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row md:flex-row lg:gap-0 md:gap-0 gap-10 md:pb-10">
-              <div className="relative left-0 top-0 md:left-7 md:top-0 xl:left-10 xl:top-20 lg:top-0 lg:left-40">
+              <div className="relative left-0 top-0 md:left-7 md:top-0 xl:left-10 xl:top-20 lg:top-0 lg:left-7">
                 <img
                   src="/images/Pet-Euthanasia-At-Home.jpg"
                   alt="Pet at Home"
-                  className="xl:w-320 xl:h-110 md:w-420 md:h-75 w-100 h-60"
+                  className="xl:w-320 xl:h-110 md:w-420 md:h-75 w-100 h-60 lg:w-320 lg:h-80 "
                 />
               </div>
-              <div className="relative lg:top-30 md:top-10 top-0">
+              <div className="relative lg:top-10 xl:top-30 md:top-10 top-0">
                 <div className="box-border xl:w-[500]  xl:p-10 p-5 bg-cream ">
                   <div className="flex flex-row justify-center h-full">
                     <div className="mr-4 xl:text-3xl text-2xl">
@@ -83,7 +95,7 @@ const PetAtHome = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
