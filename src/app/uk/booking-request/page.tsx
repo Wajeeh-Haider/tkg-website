@@ -1,8 +1,8 @@
-import Navbarhome from '@/components/au/Homes/Navbarhome';
-import Footer from '@/components/Footer';
-import Tellus from '@/components/uk/bookingrequest/Tellus';
-import Hero from '@/components/uk/homeeuthanasia/Hero';
-import React from 'react';
+import Navbarhome from "@/components/uk/Homes/Navbarhome";
+import Footer from "@/components/Footer";
+import Tellus from "@/components/uk/bookingrequest/Tellus";
+import Hero from "@/components/uk/homeeuthanasia/Hero";
+import React from "react";
 
 function page() {
   return (
