@@ -240,14 +240,14 @@ export default function Home() {
               <Button
                 label="UK"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 bg-[#0e797d] cursor-pointer text-white font-sans text-[13.125px] font-semibold hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+                className="hover:gap-2 bg-[#0e797d] cursor-pointer text-white font-sans text-[13.125px] lg:text-base font-semibold hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
             <Link href="/au">
               <Button
                 label="Australia"
                 icon={<ChevronRightIcon className="w-5 h-5" />}
-                className="hover:gap-2 bg-[#0e797d] cursor-pointer text-white font-sans text-[13.125px] font-semibold hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
+                className="hover:gap-2 bg-[#0e797d] cursor-pointer text-white font-sans text-[13.125px] lg:text-base font-semibold hover:opacity-80 px-6 py-3 lg:px-6 lg:py-3"
               />
             </Link>
           </div>
