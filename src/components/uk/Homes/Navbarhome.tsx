@@ -136,7 +136,7 @@ function Navbarhome({ country = 'uk' }: { country?: 'uk' | 'au' }) {
         {/* Desktop Nav */}
         <div className="hidden xl:flex flex-1 justify-center">
           <ul
-            className={`flex items-center gap-6 text-sm font-semibold font-sans transition-colors duration-300 ${
+            className={`flex items-center gap-10 text-sm xl:text-[18px] font-semibold font-sans transition-colors duration-300 ${
               isScrolled ? 'text-[#404040]' : 'text-[#404040]'
             }`}
           >

@@ -151,7 +151,7 @@ function Faqsservice() {
                     }`}
                   >
                     <div
-                      className="faq-content text-[14px] text-[#404040] font-sans"
+                      className="faq-content text-[14px] xl:text-base font-light text-[#404040] font-sans"
                       dangerouslySetInnerHTML={{ __html: item.answer }}
                     />
                   </motion.div>

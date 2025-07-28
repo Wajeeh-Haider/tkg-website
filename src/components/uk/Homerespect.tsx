@@ -7,7 +7,7 @@ function Homerespect() {
 
   return (
     <div className="bg-[#FEFBF8]">
-      <div className="container mx-auto px-4 md:px-10 lg:px-8 py-15">
+      <div className="container mx-auto px-4 md:px-10 lg:px-4 py-15">
         <h1 className="text-[40px] font-serif mb-4 text-[#404040]">
           Dignified, Respectful In-Home Pet Euthanasia
         </h1>
@@ -15,7 +15,7 @@ function Homerespect() {
           A Compassionate Farewell With Dog Euthanasia
         </h2>
 
-        <p className="text-sm font-sans text-[#404040] leading-relaxed">
+        <p className="text-sm xl:text-base font-sans text-[#404040] leading-relaxed">
           Our <span className="text-[#0E797d] font-medium">dog euthanasia</span>{' '}
           service offers a peaceful and gentle way to say goodbye to your
           beloved dog in the comfort of their home. We understand how difficult
@@ -26,7 +26,7 @@ function Homerespect() {
 
         <button
           onClick={() => setShowMore(!showMore)}
-          className="text-[#404040] cursor-pointer hover:underline font-medium mt-2"
+          className="text-[#404040] cursor-pointer text-sm xl:text-base hover:underline font-medium mt-2"
         >
           {showMore ? 'Read Less' : 'Read More'}
         </button>
@@ -37,7 +37,7 @@ function Homerespect() {
               <h3 className="text-[32px] font-serif mb-4 text-[#404040]">
                 A Peaceful Goodbye With Cat Euthanasia
               </h3>
-              <p className="text-sm font-sans text-[#404040] leading-relaxed">
+              <p className="text-sm xl:text-base font-sans text-[#404040] leading-relaxed">
                 We offer{' '}
                 <span className="text-[#0E797d] font-medium">
                   cat euthanasia
@@ -52,7 +52,7 @@ function Homerespect() {
               <h3 className="text-[40px] font-serif mb-4 text-[#404040]">
                 UK-Wide Pet Euthanasia Services{' '}
               </h3>
-              <p className="text-sm font-sans text-[#404040] leading-relaxed">
+              <p className="text-sm xl:text-base font-sans text-[#404040] leading-relaxed">
                 At The Kindest Goodbye, we are proud to offer our compassionate
                 pet euthanasia at home services across the UK. Whether you need
                 support in major cities such as{' '}

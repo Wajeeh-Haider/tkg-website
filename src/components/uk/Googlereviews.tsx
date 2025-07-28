@@ -52,7 +52,7 @@ export default function Googlereviews() {
       <div
         id="scroll-target"
         ref={contentRef}
-        className="container mx-auto md:grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 p-6 md:pl-15 lg:pr-15 xl:pr-0 items-center relative"
+        className="container mx-auto md:grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 p-6 md:pl-5  items-center relative"
       >
         <div className="flex flex-col py-6 mb-8 items-center text-center">
           <h2 className="text-2xl font-bold mb-1 font-sans text-gray-800">
